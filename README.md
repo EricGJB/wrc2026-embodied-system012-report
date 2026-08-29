@@ -103,3 +103,32 @@ WRC 展示中，工业和物流场景最关心的不是一次性成功，而是�
 - Unitree/WRC 预热页：https://www.worldrobotconference.com/news/latestnews/2997.html
 - NVIDIA Jetson Thor/T3000/T2000/Cosmos 3 Edge：https://blogs.nvidia.cn/blog/jetson-thor-robotics-edge-ai-agent/
 - 黑芝麻智能 WRC 算力矩阵报道：https://wap.eastmoney.com/a/202608223850183143.html
+
+## 8. 一页 PPT 版：头部玩家大小脑模型浓缩表
+
+### 8.1 机器人玩家
+
+| 厂商 | 小脑/System 0-1 | 大脑/System 1-2 | 参数量 | 算力/部署 | 一句话判断 |
+|---|---|---|---|---|---|
+| 银河通用 Galbot | AstraBrain-WBC 0.5，全身实时运控小脑；GraspVLA/GroceryVLA/TrackVLA 做抓取、零售、导航跟随。 | AstraBrain WAM；LDA-1B 隐式世界-动作基础模型，统一 VLA 与世界模型。 | LDA-1B：1B；WBC 0.5：8040 万。 | WBC 测试：单张 RTX 4090，<1.5ms 推理，50Hz 闭环；开源部署含 Jetson Orin onboard。 | 数据最完整，是真正能在 PPT 上讲清“大小脑+参数+频率”的样本。 |
+| 优必选 UBTECH | Thinker-VLA 做动作执行和工业操作；底层运控模型未单独披露。 | Thinker 基座模型 + Thinker-WM 世界模型；U1 使用 Resonance-LM 情感大模型。 | Thinker 最大 100B；VLA/WM 未披露。 | 端侧全功能模块 GPU 显存需求从 64GB 优化至 32GB；NVIDIA 披露优必选可由 Jetson AGX Orin 64GB 迁移到 32GB。 | 工业化端侧部署最明确，重点讲“100B 大脑下沉到 32GB 端侧模块”。 |
+| 智元机器人 AGIBOT | 运动智能/操作智能未披露独立小脑参数；Action Expert 负责精细动作执行。 | GO-1 / Genie Operator-1，ViLLA 架构：VLM + Latent Planner + Action Expert。 | 未披露；业内二手报道称 GO-1/GO-2 属百亿参数以内。 | 官方称支持部署到多款机器人本体；具体芯片未披露；二手报道称边缘端 10Hz-20Hz。 | 头部玩家，亮点是 ViLLA 用 Latent Action 吸收人类视频和多本体数据。 |
+| 智平方 AI2 Robotics | GOVLA / FiS-VLA，快慢系统深度融合，异构输入 + 异步频率。 | AlphaBrain 具身大模型，驱动 AlphaBot 2。 | 未披露。 | 未披露。 | 头部玩家，信息披露偏模型路线和商业落地，缺少参数/算力。 |
+| 星海图 Galaxea | 高性能运动小脑；全身控制基础模型。 | G0.5 VLA 基础模型；Fast-WAM 世界模型。 | 未披露。 | R1 Lite 标配高算力计算平台，原生支持端侧模型部署；具体算力未披露。 | “整机+智能”路线明确，但公开硬指标不足。 |
+| 自变量 X Square Robot | 未披露独立小脑；强调硬件本体原生适配基础模型控制。 | WALL-B 世界统一模型；Wall-OSS-0.5 预训练模型上真机测 17 个任务。 | 未披露。 | 未披露。 | 叙事最激进：从 VLA 三段式转向统一世界模型，但硬指标未公开。 |
+| 宇树 Unitree | 强项在本体和运动控制；G1 官方称模仿与强化学习驱动。 | WRC 演讲提到 VLA 与世界模型，并称 2025 年重启视频生成式世界模型投入；未披露量产大脑模型。 | 未披露。 | G1 基础算力：8 核高性能 CPU；开发/EDU 版本可选 Jetson Orin。 | 本体玩家代表，适合放在“硬件强、模型参数未披露”位置。 |
+| 蔚蓝智能 BabyAlpha | 四足运控未披露。 | BabyAlpha A3 本地运行交互大模型。 | 7B。 | 本地端侧运行，芯片未披露。 | 虽非人形头部，但“7B 本地大模型”是少数明确参数案例。 |
+
+### 8.2 算力单元参考
+
+| 算力单元/平台 | 明确数据 | 对应模型层 | PPT 用法 |
+|---|---|---|---|
+| NVIDIA Jetson/IGX T3000 | 865 FP4 TFLOPS；32GB LPDDR5X；273GB/s 带宽。 | 端侧 System 1/2：LLM、VLM、VLA、世界基础模型。 | 说明端侧大脑进入“几十 GB 显存、数百 TFLOPS”门槛。 |
+| NVIDIA Jetson T2000 | 400 FP4 TFLOPS；16GB 内存。 | 中低阶端侧感知、导航、机械臂策略。 | 说明端侧算力开始分层。 |
+| NVIDIA Cosmos 3 Edge | 40 亿参数；兼容 Thor；端侧推理用于实时感知、预测、生成动作。 | System 1/2 融合：轻量世界基础模型。 | 可作为“世界模型端侧化”的标杆参照。 |
+| 黑芝麻智能 Liora | 最高 700 TOPS，支持世界模型与端到端控制。 | 高阶人形、多机器人协同。 | 国产机器人算力平台参照。 |
+| 黑芝麻 Kalos/Aura | Kalos 48 TOPS；Aura 70 TOPS。 | System 0/1：感知、运动控制、多任务执行。 | 说明低速服务、四足/巡检等不一定需要最高端 GPU。 |
+
+### 8.3 PPT 结论
+
+可用一句话收束：WRC2026 的大小脑竞争已经从“有没有具身大模型”转为“能否把大脑、VLA 和小脑压到端侧，并用真实场景数据闭环持续迭代”。当前公开硬指标最完整的是银河通用；端侧工程化最清晰的是优必选；智元、智平方、星海图、自变量代表不同大脑路线，但参数和算力仍披露不足。
