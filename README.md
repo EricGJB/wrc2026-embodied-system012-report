@@ -25,7 +25,8 @@
 |---|---|---|---|---|---|---|---|---|---|
 | 优必选 UBTECH | WRC 展示 Cruzr S2/Y1 工业产线、Walker C1、U1；36Kr 称其体系为“foundation model - world model - action model”。 | 未披露独立小脑模型名称；工业机器人强调高精度谐波关节、力觉/视觉传感与端侧控制。 | Thinker-VLA，负责从任务理解到连续控制；WRC 展示汽车上下料、分拣等，抓取节拍最高接近 1100 件/小时。 | Thinker 基座模型、Thinker-WM 世界模型；U1 搭载 Resonance-LM 情感大模型。 | 高实时能力端侧；云端做慢推理、多机调度、模型管理。VLA 端侧全功能模块 GPU 显存需求由 64GB 优化至 32GB。 | Thinker 最大基座模型 100B；Thinker-VLA 参数未披露。 | 报道称工业作业型机器人需要 NVIDIA Thor 级端侧算力；NVIDIA 官方称优必选通过 Jetson 内存优化可从 Orin 64GB 迁移至 32GB。 | Hz 未披露；VLA 推理效率披露提升 176%。 | QbitAI: https://www.qbitai.com/2026/08/477253.html；36Kr: https://eu.36kr.com/en/p/3953394550537606；NVIDIA: https://blogs.nvidia.cn/blog/jetson-thor-robotics-edge-ai-agent/ |
 | 银河通用 Galbot | WRC 官方展商页披露 AstraBrain、AstraBrain WAM、AstraBrain WBC、GraspVLA、GroceryVLA、TrackVLA；发布 ET1/星仔。 | AstraBrain-WBC 0.5 通用小脑，面向全身实时运控；开源 Humanoid-GPT 支持 Unitree G1 29DOF。 | GraspVLA、GroceryVLA、TrackVLA；零售/工业全程自主推理、无遥操。 | AstraBrain WAM；LDA-1B 将世界模型与动作模型统一，联合学习策略、前向动力学、逆向动力学和视觉预测。 | 小脑开源实现含 real-robot deployment，并有 onboard_deploy（Jetson Orin）。LDA-1B 支持跨本体后训练，生产部署算力未披露。 | LDA-1B 为 1B 参数；AstraBrain-WBC 0.5 为 8040 万参数。 | WBC 公开测试使用单张 RTX 4090；onboard 路径为 Jetson Orin。 | WBC 工程优化后 RTX 4090 上端到端推理 <1.5ms，可满足 50Hz 闭环。 | WRC 官方: https://www.worldrobotconference.com/expo/company/434.html；LDA-1B arXiv: https://arxiv.org/abs/2602.12215；Humanoid-GPT: https://github.com/GalaxyGeneralRobotics/Humanoid-GPT；QbitAI WBC: https://www.qbitai.com/2026/06/436813.html |
-| 智元机器人 AGIBOT | 2026 年持续披露 AGIBOT WORLD 2026 数据集；近期披露 GO-1/ViLLA，WRC 期间参与具身场景活动。 | 产品体系称“三智合一”：运动智能、交互智能、操作智能；独立 System 0 模型参数未披露。 | GO-1 基于 Vision-Language-Latent-Action（ViLLA），以 Latent Planner 和 Action Expert 连接视频理解与动作执行。 | VLM 负责场景/语言理解；AGIBOT WORLD 2026 Theme 2 面向世界模型、神经仿真、物理感知数据。 | GO-1 支持部署到多款机器人本体；具体端侧芯片、显存和云边分工未披露。 | GO-1 参数未公开。 | 未披露；行业报道提到 GO-1/GO-2 百亿参数以内模型可在边缘端 10Hz-20Hz 推理，应视为二手口径。 | 官方未披露；二手报道为 10Hz-20Hz 端侧推理。 | AGIBOT Theme 2: https://agibot.com/article/231/detail/72.html；上观 GO-1: https://www.shobserver.cn/wx/detail.do?id=873140；AGIBOT World: https://agibot-world.com/ |
+| 蚂蚁灵波 Robbyant | WRC 官方展商页披露展位 C111、“一脑多机”，同一 LingBot 跨本体具身基座模型驱动乐聚、R2、钛虎机器人做物流、药房、工业上下料。 | 未披露独立小脑名称；LingBot-VLA 2.0 统一 55 维动作空间，覆盖手臂、末端、夹爪、灵巧手、腰部、头部、移动底盘信号。 | LingBot-VLA 2.0，Sparse MoE Action Expert；LingBot-VA 2.0 为 Video-Action 世界动作模型。 | LingBot-World 2.0 实时交互世界模型；LingBot-Vision 1.0 视觉基础模型；LingBot-Depth 2.0 空间感知模型。 | WRC 展品显示 LingBot 跨本体部署到乐聚、R2、钛虎等异构机器人；GitHub 披露真实机器人部署入口；Depth 2.0 与奥比中光 Gemini 330 系列联合优化并提供 edge-side SDK。 | LingBot-VLA 2.0：6B；LingBot-VA：约 5B DiT；LingBot-Vision：1B；World 2.0 参数未披露。 | LingBot-VLA 2.0 GitHub 披露 RTX 4090D 上 10 步 denoising 单次推理约 130ms；LingBot-VA 推理需约 18-24GB VRAM。 | WRC 药房流程 60 秒内完成；物流 60 秒内数百件柔性包裹；VLA 单次推理约 130ms；World 2.0 标称 720p/60fps 实时交互、控制延迟低于 1 秒。 | WRC 官方: https://www.worldrobotconference.com/expo/company/765.html；物流: https://www.worldrobotconference.com/expo/product/1532.html；药房: https://www.worldrobotconference.com/expo/product/1535.html；工业: https://www.worldrobotconference.com/expo/product/1536.html；VLA: https://technology.robbyant.com/lingbot-vla-v2；HF: https://huggingface.co/robbyant/lingbot-vla-v2-6b；GitHub: https://github.com/robbyant/lingbot-vla-v2；VA: https://huggingface.co/docs/lerobot/en/lingbot_va；World: https://technology.robbyant.com/lingbot-world-v2 |
+| 智元机器人 AGIBOT | 2026 年持续披露 AGIBOT WORLD 2026 数据集；WAIC 展示 GO-2、GE-2、Genie Evolver 1.0，发布 A3 Ultra/G2 Max 等新品。 | 产品体系称“三智合一”：运动智能、交互智能、操作智能；独立 System 0 模型参数未披露。 | GO-1 基于 Vision-Language-Latent-Action（ViLLA）；WAIC 披露 GO-2 采用动作思维链与异步双系统，打通规划与执行。 | GE-2 世界模型；Genie Evolver 1.0 闭环真机强化学习系统；AGIBOT WORLD 2026 Theme 2 面向世界模型、神经仿真、物理感知数据。 | GO-1/GO-2 支持多本体部署；WAIC 披露 A3 Ultra 增加 700 TOPS 具身处理器，G2 Max 支持 7x24 小时无人化码垛搬运。 | GO-1/GO-2/GE-2 参数未公开。 | A3 Ultra：700 TOPS 端侧具身处理器；G2 Max 双臂标准负载 38kg、峰值 50kg；行业二手口径称 GO-1/GO-2 百亿参数以内模型可在边缘端 10Hz-20Hz 推理，应视为二手口径。 | 官方模型 Hz 未披露；二手报道为 10Hz-20Hz 端侧推理。 | AGIBOT Theme 2: https://agibot.com/article/231/detail/72.html；上观 GO-1: https://www.shobserver.cn/wx/detail.do?id=873140；WAIC: https://finance.sina.com.cn/tob/2026-07-18/doc-iniierwe7241266.shtml；AGIBOT World: https://agibot-world.com/ |
 | 智平方 AI2 Robotics | WRC 官方展商页披露 AlphaBrain 和 AlphaBot 2；财联社披露 GOVLA/FiS-VLA 路线。 | 与全身动作/控制深度结合，但独立小脑模型名称和频率未公开。 | GOVLA 系列，2025 年推出 GOVLA 0.5（FiS-VLA），公开口径为“异构输入+异步频率”双系统 VLA。 | AlphaBrain 作为全栈自研具身大模型核心；强调原生面向真实物理世界。 | AlphaBot 2 由 AlphaBrain 定义形态并驱动；具体端侧/云端部署未披露。 | 未披露。 | 未披露。 | “异步频率”披露为架构特征，具体 Hz 未披露。 | WRC 官方: https://www.worldrobotconference.com/expo/company/409.html；财联社: https://www.cls.cn/detail/2341170 |
 | 星海图 Galaxea | WRC 官方展商页展示 Kengo、R1 Pro/Lite；WRC 期间发布 Nexo、Kengo、Lemo 三大整机；2026-06 发布 G0.5、Fast-WAM、全身控制基础模型。 | 高性能运动小脑、全身控制基础模型；Kengo 以运动小脑和具身大脑为核心；Nexo 强调力触与精密作业。 | G0.5 VLA 基础模型，面向作业智能；官方称已开源；Nexo 面向前置仓/物流长时序作业。 | Fast-WAM 世界模型；三层智能观：本能智能、作业智能、进化智能；中国日报披露 Fast-WAM 单步推理延迟约 190ms，相比传统范式约 800ms 提速 4 倍以上。 | R1 Lite 标配高算力计算平台，原生支持端侧模型部署；Nexo 会场介绍口径为约 700 TOPS 端侧算力，接近 NVIDIA Jetson/Thor T3000 865 FP4 TFLOPS 量级；该 700 TOPS 暂未检索到公开网页原文。 | 未披露。 | 会场口径：Nexo 约 700 TOPS；NVIDIA Thor/T3000 官方公开规格为 865 FP4 TFLOPS、32GB LPDDR5X。 | Fast-WAM：约 190ms 单步推理延迟；Nexo 作业控制频率未披露。 | WRC 官方: https://www.worldrobotconference.com/expo/company/446.html；21 经济: https://www.21jingji.com/article/20260617/herald/9e36e33f25a99595a8e3e3e6ff5e6f2d.html；中国日报: https://cn.chinadaily.com.cn/a/202608/24/WS6a8bec8e45ce1aabf7a935af.html；NVIDIA: https://blogs.nvidia.cn/blog/jetson-thor-robotics-edge-ai-agent/；700 TOPS 为用户提供的 WRC 会场介绍口径，待补公开链接。 |
 | 自变量机器人 X Square Robot | WRC 官方新闻页/公司官网显示 2026-08-19 亮相 WRC，面向家庭与物流；2026 发布 WALL-B、Wall-OSS-0.5。 | 未披露独立小脑；强调自研核心零部件和硬件本体原生适配基础模型控制。 | 端到端模型驱动通用机器人；Wall-OSS-0.5 直接把未任务微调的预训练模型搬上真实机器人测试 17 个任务。 | WALL-B 被公司定义为“世界统一模型”，强调取消视觉、语言、动作三方分离。 | 模型上真机；家庭/物流真实场景落地。具体端侧/云端分工未披露。 | 未披露。 | 未披露。 | 未披露。 | 公司官网: https://x2robot.com/news；WRC 复盘: https://finance.sina.cn/stock/jdts/2026-08-26/detail-iniprumq5643660.d.html |
@@ -93,6 +94,10 @@ WRC 展示中，工业和物流场景最关心的不是一次性成功，而是�
 - 银河通用 LDA-1B 论文：https://arxiv.org/abs/2602.12215
 - 银河通用 Humanoid-GPT/AstraBrain-WBC 0.5 GitHub：https://github.com/GalaxyGeneralRobotics/Humanoid-GPT
 - 银河通用 WBC 报道（量子位）：https://www.qbitai.com/2026/06/436813.html
+- 蚂蚁灵波 WRC 展商页：https://www.worldrobotconference.com/expo/company/765.html
+- 蚂蚁灵波 WRC 物流/药房/工业展品页：https://www.worldrobotconference.com/expo/product/1532.html；https://www.worldrobotconference.com/expo/product/1535.html；https://www.worldrobotconference.com/expo/product/1536.html
+- 蚂蚁灵波 LingBot-VLA 2.0 官方技术页/GitHub/HuggingFace：https://technology.robbyant.com/lingbot-vla-v2；https://github.com/robbyant/lingbot-vla-v2；https://huggingface.co/robbyant/lingbot-vla-v2-6b
+- 蚂蚁灵波 LingBot-World 2.0 / LingBot-VA：https://technology.robbyant.com/lingbot-world-v2；https://huggingface.co/docs/lerobot/en/lingbot_va
 - 智元 AGIBOT WORLD 2026 Theme 2：https://agibot.com/article/231/detail/72.html
 - 智元 GO-1 报道（上观新闻）：https://www.shobserver.cn/wx/detail.do?id=873140
 - 星海图 G0.5/Fast-WAM 报道（21 经济）：https://www.21jingji.com/article/20260617/herald/9e36e33f25a99595a8e3e3e6ff5e6f2d.html
@@ -104,6 +109,15 @@ WRC 展示中，工业和物流场景最关心的不是一次性成功，而是�
 - Unitree/WRC 预热页：https://www.worldrobotconference.com/news/latestnews/2997.html
 - NVIDIA Jetson Thor/T3000/T2000/Cosmos 3 Edge：https://blogs.nvidia.cn/blog/jetson-thor-robotics-edge-ai-agent/
 - 黑芝麻智能 WRC 算力矩阵报道：https://wap.eastmoney.com/a/202608223850183143.html
+- WAIC 2026 官方展商入口：https://www.worldaic.com.cn/exhibitors
+- 蚂蚁灵波 WAIC 2026 智慧药房/全栈大脑 2.0：https://app.xinhuanet.com/news/article.html?articleId=202607171b0f027e70f342f7ad1a912a51136a9c；https://www.antgroup.com/hk/news-media/press-releases/1784275200000
+- 奥比中光 x 蚂蚁灵波 LingBot-Depth 2.0：https://www.orbbec.com.cn/index/News/info.html?cate=31&id=377
+- 智元 WAIC 2026 A3 Ultra/GO-2/GE-2：https://finance.sina.com.cn/tob/2026-07-18/doc-iniierwe7241266.shtml；https://finance.sina.com.cn/roll/2026-07-18/doc-iniieweh1526205.shtml
+- 地瓜机器人 RDK S600 官方规格/WAIC 量产验证：https://developer.d-robotics.cc/rdks600；https://www.stdaily.com/web/gdxw/2026-07/16/content_548005.html；https://www.shobserver.cn/wx/detail.do?id=1144380
+- MiniCPM-Robot 官方 GitHub：https://github.com/OpenBMB/MiniCPM-Robot
+- 黑芝麻智能 WAIC 2026 SesameX：https://www.blacksesame.com/zh/list_8/994.html
+- 魔法原子 Magic-VLA K02 WAIC：https://autonews.gasgoo.com/articles/news/waic-2026-magiclab-launches-three-new-robot-products-embodied-intelligence-accelerates-entry-into-factories-and-public-scenarios-2079099620004175873；https://finance.sina.com.cn/tech/roll/2026-07-19/doc-iniihqpn1240008.shtml
+- 普渡 WAIC 2026 PuduFM/PUDU D7：https://finance.sina.com.cn/roll/2026-07-17/doc-iniicqkw1429495.shtml；https://www.prnewswire.com/news-releases/pudu-embodied-unveils-the-next-generation-pudu-d7-opening-a-new-chapter-for-industrial-semi-humanoid-robotics-302786976.html
 
 ## 8. 一页 PPT 版：头部玩家大小脑模型浓缩表
 
@@ -113,7 +127,8 @@ WRC 展示中，工业和物流场景最关心的不是一次性成功，而是�
 |---|---|---|---|---|---|
 | 银河通用 Galbot | AstraBrain-WBC 0.5，全身实时运控小脑；GraspVLA/GroceryVLA/TrackVLA 做抓取、零售、导航跟随。 | AstraBrain WAM；LDA-1B 隐式世界-动作基础模型，统一 VLA 与世界模型。 | LDA-1B：1B；WBC 0.5：8040 万。 | WBC 测试：单张 RTX 4090，<1.5ms 推理，50Hz 闭环；开源部署含 Jetson Orin onboard。 | 数据最完整，是真正能在 PPT 上讲清“大小脑+参数+频率”的样本。 |
 | 优必选 UBTECH | Thinker-VLA 做动作执行和工业操作；底层运控模型未单独披露。 | Thinker 基座模型 + Thinker-WM 世界模型；U1 使用 Resonance-LM 情感大模型。 | Thinker 最大 100B；VLA/WM 未披露。 | 端侧全功能模块 GPU 显存需求从 64GB 优化至 32GB；NVIDIA 披露优必选可由 Jetson AGX Orin 64GB 迁移到 32GB。 | 工业化端侧部署最明确，重点讲“100B 大脑下沉到 32GB 端侧模块”。 |
-| 智元机器人 AGIBOT | 运动智能/操作智能未披露独立小脑参数；Action Expert 负责精细动作执行。 | GO-1 / Genie Operator-1，ViLLA 架构：VLM + Latent Planner + Action Expert。 | 未披露；业内二手报道称 GO-1/GO-2 属百亿参数以内。 | 官方称支持部署到多款机器人本体；具体芯片未披露；二手报道称边缘端 10Hz-20Hz。 | 头部玩家，亮点是 ViLLA 用 Latent Action 吸收人类视频和多本体数据。 |
+| 蚂蚁灵波 Robbyant | LingBot-VLA 2.0 统一 55 维动作空间；Sparse MoE Action Expert；WRC “一脑多机”驱动乐聚/R2/钛虎。 | LingBot-World 2.0；LingBot-VA 2.0；LingBot-Vision/Depth 空间感知。 | VLA 2.0：6B；VA：约 5B DiT；Vision：1B；World 未披露。 | VLA 2.0：RTX 4090D 上 10 步 denoising 约 130ms；VA：约 18-24GB VRAM；World：720p/60fps、控制延迟 <1s。 | 官方硬数据很强，应和银河、优必选一起放进 PPT 主表。 |
+| 智元机器人 AGIBOT | 运动智能/操作智能未披露独立小脑参数；Action Expert 负责精细动作执行。 | GO-1/GO-2 具身基座模型；GE-2 世界模型；Genie Evolver 1.0 闭环真机强化学习。 | 模型参数未披露；业内二手报道称 GO-1/GO-2 属百亿参数以内。 | A3 Ultra：700 TOPS 端侧具身处理器；G2 Max 双臂标准 38kg、峰值 50kg；模型 Hz 未披露。 | WAIC 后可进 PPT 主表：端侧算力明确，但模型参数仍缺。 |
 | 智平方 AI2 Robotics | GOVLA / FiS-VLA，快慢系统深度融合，异构输入 + 异步频率。 | AlphaBrain 具身大模型，驱动 AlphaBot 2。 | 未披露。 | 未披露。 | 头部玩家，信息披露偏模型路线和商业落地，缺少参数/算力。 |
 | 星海图 Galaxea | 高性能运动小脑；全身控制基础模型；Nexo 强调力触与精密作业。 | G0.5 VLA 基础模型；Fast-WAM 世界模型；Nexo 用于前置仓长时序作业。 | 未披露。 | 会场介绍口径：Nexo 约 700 TOPS 端侧算力，接近 NVIDIA Thor/T3000 865 FP4 TFLOPS 量级；Fast-WAM 公开报道单步推理约 190ms。 | 已有较明确端侧算力口径，但模型参数仍未公开。 |
 | 自变量 X Square Robot | 未披露独立小脑；强调硬件本体原生适配基础模型控制。 | WALL-B 世界统一模型；Wall-OSS-0.5 预训练模型上真机测 17 个任务。 | 未披露。 | 未披露。 | 叙事最激进：从 VLA 三段式转向统一世界模型，但硬指标未公开。 |
@@ -132,4 +147,43 @@ WRC 展示中，工业和物流场景最关心的不是一次性成功，而是�
 
 ### 8.3 PPT 结论
 
-可用一句话收束：WRC2026 的大小脑竞争已经从“有没有具身大模型”转为“能否把大脑、VLA 和小脑压到端侧，并用真实场景数据闭环持续迭代”。当前公开硬指标最完整的是银河通用；端侧工程化最清晰的是优必选；星海图 Nexo 已出现约 700 TOPS 端侧算力会场口径；智元、智平方、自变量代表不同大脑路线，但参数和算力仍披露不足。
+可用一句话收束：WRC2026 的大小脑竞争已经从“有没有具身大模型”转为“能否把大脑、VLA 和小脑压到端侧，并用真实场景数据闭环持续迭代”。当前公开硬指标最完整的是银河通用、蚂蚁灵波；端侧工程化最清晰的是优必选；智元 A3 Ultra 已在 WAIC 披露 700 TOPS 具身处理器；星海图 Nexo 也有约 700 TOPS 会场口径；但智元、星海图、智平方、自变量的大模型参数和生产部署频率仍披露不足。
+
+### 8.4 官方来源补充清单
+
+| 厂商 | WRC 官方展位/展品信息 | 公司/项目官方硬数据 | PPT 可引用点 |
+|---|---|---|---|
+| 蚂蚁灵波 Robbyant | 展位 C111；WRC 官方写明“基于蚂蚁灵波跨本体具身大模型”的物流、药房、工业三套展示方案。 | LingBot-VLA 2.0：6B、约 6 万小时预训练数据、20 种机器人构型、55 维动作空间、RTX 4090D 上约 130ms；LingBot-VA 约 5B DiT、18-24GB VRAM。 | “一脑多机”最适合做 PPT 例子：同一大脑驱动不同本体和不同场景。 |
+| 银河通用 Galbot | 展位 C104；WRC 官方披露 AstraBrain WAM/WBC、GraspVLA/GroceryVLA/TrackVLA。 | LDA-1B：1B；AstraBrain-WBC 0.5：8040 万参数、RTX 4090 <1.5ms、50Hz 闭环、Jetson Orin onboard 部署。 | “大小脑硬指标最完整”：WAM/VLA + WBC 小脑 + 频率/算力。 |
+| 优必选 UBTECH | 展位 C103；Walker S2 支持 3 分钟热插拔换电、7×24 小时运行；Walker C1 搭载大模型驱动多模态内核。 | Thinker 最大 100B；VLA 端侧显存从 64GB 优化到 32GB；推理效率提升 176%。 | “端侧工程化”：大模型能力压到机器人本体。 |
+| 星海图 Galaxea | 展位 C210；Kengo 以高性能运动小脑与具身大脑为核心，R1 Lite 原生支持端侧模型部署。 | Fast-WAM 公开报道单步约 190ms；G0.5 复现计划开放权重/接口/评测/微调工具；Nexo 会场口径约 700 TOPS。 | “端侧算力+世界模型延迟”：Nexo 700TOPS、Fast-WAM 190ms。 |
+| 自变量 X Square | 展位 C107；量子 1 Pro/量子 2 号搭载端到端具身智能基座大模型，量子 2 号最多 62 自由度。 | Wall-OSS-0.5 上真机测试 17 个任务；WALL-B 世界统一模型；参数/算力未公开。 | “统一模型路线”：视觉、语言、动作从分段走向统一。 |
+| 宇树 Unitree | 展位 C312；G1、B2、Go2、H2，WRC 官方披露 G1 23-43 关节、H2 超高算力平台。 | G1 官方基础算力 8 核 CPU；高算力模块可选 Orin；G1-D 官方写 Orin NX 16GB 100TOPS 等可选项。 | “本体平台”：适合作为第三方 VLA/小脑部署载体。 |
+| 傅利叶 Fourier | 展位 C229；GR-3 为 Care-bot，柔肤软包覆与全感交互系统。 | WRC 复盘报道称其框架连接 LLM、具身模型、导航规划和低级运控；参数/算力未披露。 | “通用控制栈”：把模型和本体适配层平台化。 |
+| 魔法原子 MagicLab | 展位 C323；WRC 官方披露“通用大脑+模块化全栈产品”架构和原子万象大模型。 | 参数/算力未披露；官方披露 MagicBot 42 自由度、已进驻追觅工厂实训。 | 可作为“物理 AI 原生平台”补充案例，但硬数据不足。 |
+
+## 9. WAIC 2026 增量：WRC 前置验证与硬数据补充
+
+WAIC 2026 于 2026 年 7 月 17-20 日在上海举行，时间上早于 WRC 2026 约一个月。官网可确认展商入口，但展商详情页动态加载较多；本轮主要采用 WAIC 期间公司官方稿、官方 GitHub/技术页和新华社、上证报、科技日报等可追溯材料。结论是：WAIC 的增量不只是“又一场展会”，而是提前暴露了端侧部署、真实场景运营和国产算力适配三条主线。
+
+### 9.1 有明确模型/算力/频率数据的 WAIC 增量表
+
+| 厂商/项目 | WAIC 增量信息 | 模型类别与名称 | 参数/数据规模 | 算力/部署/频率 | 对 WRC 报告的影响 | 来源 |
+|---|---|---|---|---|---|---|
+| 蚂蚁灵波 Robbyant | WAIC “十大镇馆之宝”之一为“基于蚂蚁灵波跨本体具身大模型的机器人智慧药房”；H3-B302、H1-C701 展台展示乐聚、星尘、自研 R-2 三种本体按随机订单协同作业。 | LingBot-VLA 2.0；LingBot-Depth 2.0；“全栈大脑 2.0”。 | LingBot-VLA 2.0：6B，约 6 万小时真实数据，适配 17 家厂商 20 余种机器人构型；LingBot-Depth 2.0：基于 1.5 亿规模数据训练。 | VLA 2.0 已有 RTX 4090D 单次约 130ms 口径；Depth 与 Gemini 330/EGO RGB-D 打通采集和端侧感知，16 项评测 12 项 RMSE 最优，透明物体误差低至 0.010。 | 强化“蚂蚁灵波是公开硬数据最完整的大脑供应商之一”；PPT 中可从 WRC“一脑多机”升级为 WAIC/WRC 连续验证。 | https://app.xinhuanet.com/news/article.html?articleId=202607171b0f027e70f342f7ad1a912a51136a9c；https://www.orbbec.com.cn/index/News/info.html?cate=31&id=377；https://github.com/robbyant/lingbot-vla-v2 |
+| 智元机器人 AGIBOT | WAIC 发布远征 A3 Ultra、精灵 G2 Max、灵犀 X2 EDU 等，并展示 GO-2、GE-2、Genie Evolver 1.0；60 台智元机器人参与大会公共服务。 | GO-2 具身基座大模型；GE-2 世界模型；Genie Evolver 1.0 闭环真机强化学习系统。 | GO-2/GE-2 参数未披露；A3 Ultra 为 174cm 商用全尺寸人形；G2 Max 双臂标准负载 38kg、峰值 50kg。 | A3 Ultra 增加 700 TOPS 具身处理器、激光雷达、多部位鱼眼相机；G2 Max 支持 7x24 小时无人化码垛搬运。 | 需更新智元行：其 WRC 前已披露 700 TOPS 端侧处理器和 GO-2/GE-2 名称，但模型参数仍空缺。 | https://finance.sina.com.cn/tob/2026-07-18/doc-iniierwe7241266.shtml；https://finance.sina.com.cn/roll/2026-07-18/doc-iniieweh1526205.shtml |
+| 地瓜机器人 D-Robotics / 它石智航 A3 | WAIC 前发布旭日 S600 量产验证进展；它石智航 A3 轮式双臂工业机器人搭载 S600，面向工业、汽车、科研场景规模化落地。 | 端侧算力平台，不是 VLA 模型；适配 3B 参数级具身大模型。 | 3B 参数级具身大模型完成 S600 平台适配；S600 面向 Pi0/0.5、Qwen3-VL-8B、Whisper 等端侧模型。 | S600：560 TOPS @INT8，4 核 Nash BPU，18x A78AE CPU，6x R52+ MCU，32/64GB LPDDR5，204.8GB/s 带宽；它石 A3 首期 5 天真机部署，端侧稳定运行。 | 这是 WAIC 最清晰的“国产端侧算力+具身模型”案例，可作为 NVIDIA Thor/Orin 之外的国产算力参照。 | https://developer.d-robotics.cc/rdks600；https://www.stdaily.com/web/gdxw/2026-07/16/content_548005.html；https://www.shobserver.cn/wx/detail.do?id=1144380 |
+| 面壁智能 / OpenBMB MiniCPM-Robot | WAIC 期间发布并开源 MiniCPM-Robot 系列，虽非整机厂，但给出非常完整的端侧具身模型数据。 | MiniCPM-RobotManip 通用操作 VLA；MiniCPM-RobotTrack 目标跟踪 VLA。 | Manip：1.5B；Track：0.9B。Manip 支持 1 分钟视觉上下文，60 帧历史流式推理从 125 TFLOPs/决策步降至 3.3 TFLOPs。 | H100 BF16 单帧前向 120ms；PhyAI 将 H20 推理从 10Hz 提至 37Hz；RobotTrack 在 Unitree Go2 EDU 本地视觉跟踪 5+ FPS、约 180ms，部署硬件为 Jetson Orin NX 16GB。 | 可补到“开源模型/第三方大脑”页：小模型端侧化比单纯参数堆叠更适合机器人。 | https://github.com/OpenBMB/MiniCPM-Robot |
+| 黑芝麻智能 SesameX | WAIC 官方稿披露 SesameX 从车规芯片扩展到机器人，展出 Kalos、Aura 开发套件及搭载黑芝麻芯片的云深处绝影 X30。 | SesameX 全脑智能计算平台；Kalos/Aura/Liora 三档计算模组。 | 非模型参数；Kalos/Aura/Liora 覆盖 48TOPS 至近 600TOPS。 | WAIC 口径：48TOPS 至近 600TOPS；2025 发布页披露 Kalos 48TOPS、Aura 70TOPS、Liora 近 600TOPS；WRC 后续口径升至 Liora 700TOPS。 | 报告中黑芝麻应区分 WAIC 近 600TOPS 与 WRC 700TOPS 两个时间口径。 | https://www.blacksesame.com/zh/list_8/994.html；https://www.blacksesame.com/zh/list_8/914.html |
+| 星海图 Galaxea | WAIC 未检索到比 WRC/开发者大会更多的 Nexo 算力公开网页；但 WAIC 前后官方/论文链条补强 G0.5 与 WAM 延迟数据。 | G0.5 自回归 VLA；Fast-WAM / GigaWorld-Policy-0.5 世界动作模型；全身控制基础模型。 | G0.5 基于 Qwen3.5 2B 初始化，18 种本体，约 1 亿条 VQA，预训练约 12 万步；模型总参数未披露。 | Fast-WAM 公开口径 190ms；GigaWorld-Policy-0.5 论文披露 A100 189ms、RTX 4090 110ms、C++ 部署 85ms。 | 可把星海图从“只有 Nexo 700TOPS 会场口径”补充为“模型延迟有论文硬指标，但 Nexo 700TOPS 仍待公开链接”。 | https://opengalaxea.github.io/G05/；https://arxiv.org/html/2607.13960v1；https://www.geekpark.net/news/365536 |
+| 魔法原子 MagicLab | WAIC 发布 MagicBot X1/D1/T1 和 Magic-VLA K02，现场展示叠盒封胶、柔性衣物整理、行李箱收纳。 | Magic-VLA K02；此前上交会材料提到 Magic-Mix 世界模型。 | 参数未披露。 | 叠盒封胶组合式长程任务成功率超过 90%；X1 31 主动自由度、单关节峰值扭矩 450N·m；D1 已进驻追觅工厂常态验证。 | 适合补“长程任务成功率”案例，但因无参数/算力，不建议放一页 PPT 主表。 | https://autonews.gasgoo.com/articles/news/waic-2026-magiclab-launches-three-new-robot-products-embodied-intelligence-accelerates-entry-into-factories-and-public-scenarios-2079099620004175873；https://finance.sina.com.cn/tech/roll/2026-07-19/doc-iniihqpn1240008.shtml |
+| 普渡机器人 Pudu | WAIC 首次线下展示 PUDU D7，并阐释“一脑多形”Physical Agent 全栈技术架构。 | PuduFM 1.0 具身智能基座模型；Pudu Agent OS。 | 模型参数未披露；累计出货超 13 万台、覆盖 85 个国家、5 万余家客户，每年超 5000 万小时实景运行数据回流。 | D7 最高负载 14kg、作业高度 2m、自主换电；公开 WAIC 材料未披露模型端侧算力。 | 可补“商用服务机器人数据飞轮”，但缺参数/算力，PPT 主表优先级低于蚂蚁/银河/智元/地瓜/MiniCPM。 | https://finance.sina.com.cn/roll/2026-07-17/doc-iniicqkw1429495.shtml；https://www.prnewswire.com/news-releases/pudu-embodied-unveils-the-next-generation-pudu-d7-opening-a-new-chapter-for-industrial-semi-humanoid-robotics-302786976.html |
+| 千觉机器人 X-Touch | WAIC 展示 VTLA 触觉具身模型、XTac UMI G1 视触觉数据采集夹爪、触觉传感器矩阵。 | VTLA（视觉-触觉-语言-动作）模型；X-TouchMind V1；TacVerse 数据集。 | 参数未披露。 | 触觉传感器毫秒级响应；XTac UMI G1 同步采集视觉、触觉、位姿轨迹、夹爪状态等五维数据。 | 可补 System 0/1 的触觉闭环方向，但因参数算力不足，仅作趋势项。 | https://www3.xinhuanet.com/tech/20260720/6cbb5f1efd99431ab721ffce590e72f1/c.html；https://www.stcn.com/article/detail/4027332.html |
+
+### 9.2 对一页 PPT 的更新建议
+
+1. 如果只留 5 个“硬数据玩家/项目”：银河通用、蚂蚁灵波、智元、地瓜机器人/它石智航、MiniCPM-Robot。
+2. 智元应从“参数算力未披露”调整为“模型参数未披露，但 A3 Ultra 端侧算力 700TOPS 已有 WAIC 媒体披露”。
+3. 地瓜 S600 不是机器人整机厂，但它给了最清晰的国产端侧算力样本：560TOPS、32/64GB、高带宽、3B 具身模型 5 天真机部署。
+4. MiniCPM-Robot 不是整机厂，但它是 WAIC 前后最适合说明“小参数、端侧、低延迟”的开源具身模型样本：1.5B/0.9B、H20 37Hz、Go2 本地 5+FPS。
+5. 星海图 Nexo 700TOPS 仍应标注为“会场口径待补公开链接”；可用 G0.5/Fast-WAM/GigaWorld 的公开论文数据补足模型侧证据。
