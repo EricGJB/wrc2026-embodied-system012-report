@@ -120,36 +120,51 @@ WRC 展示中，工业和物流场景最关心的不是一次性成功，而是�
 - 黑芝麻智能 WAIC 2026 SesameX：https://www.blacksesame.com/zh/list_8/994.html
 - 魔法原子 Magic-VLA K02 WAIC：https://autonews.gasgoo.com/articles/news/waic-2026-magiclab-launches-three-new-robot-products-embodied-intelligence-accelerates-entry-into-factories-and-public-scenarios-2079099620004175873；https://finance.sina.com.cn/tech/roll/2026-07-19/doc-iniihqpn1240008.shtml
 - 普渡 WAIC 2026 PuduFM/PUDU D7：https://finance.sina.com.cn/roll/2026-07-17/doc-iniicqkw1429495.shtml；https://www.prnewswire.com/news-releases/pudu-embodied-unveils-the-next-generation-pudu-d7-opening-a-new-chapter-for-industrial-semi-humanoid-robotics-302786976.html
+- 北京人形 WRC 2026 Pelican-Unify/天工 Omni：https://www.x-humanoid.com/news-view-292.html；https://www.beijing.gov.cn/fuwu/lqfw/gggs/202608/t20260821_4831885.html
+- 北京人形慧思开物/PelicanVLM/Wow/XR-1：https://www.x-humanoid.com/detail/hskw.html
+- 中国兵器/杭州智元研究院 WRC 2026：https://finance.sina.com.cn/enterprise/central/2026-08-20/doc-ininxzpp6777485.shtml；https://cn.chinadaily.com.cn/a/202608/20/WS6a86c3f0a3105d3d7a27c0f7.html
+- 灵境智源 N1100/N1000 具身智脑：https://www.mscapetech.com/index/products；https://mscapetech.com/index/yingyong/detail/id/10004
+- 科大讯飞 x 灵境智源合作：https://www.guandian.cn/m/show/522426
+- NVIDIA Jetson Thor/T5000/T4000 官方规格：https://www.nvidia.cn/autonomous-machines/embedded-systems/jetson-thor/
 
-## 8. 一页 PPT 版：头部玩家大小脑模型浓缩表
+## 8. 一页 PPT 版：按部署方式分类的大脑模型表
 
-### 8.1 机器人玩家
+### 8.1 机器人“大脑”与端侧/端云部署
 
-| 厂商 | 小脑/System 0-1 | 大脑/System 1-2 | 参数量 | 算力/部署 | 一句话判断 |
-|---|---|---|---|---|---|
-| 银河通用 Galbot | AstraBrain-WBC 0.5，全身实时运控小脑；GraspVLA/GroceryVLA/TrackVLA 做抓取、零售、导航跟随。 | AstraBrain WAM；LDA-1B 隐式世界-动作基础模型，统一 VLA 与世界模型。 | LDA-1B：1B；WBC 0.5：8040 万。 | WBC 测试：单张 RTX 4090，<1.5ms 推理，50Hz 闭环；开源部署含 Jetson Orin onboard。 | 数据最完整，是真正能在 PPT 上讲清“大小脑+参数+频率”的样本。 |
-| 优必选 UBTECH | Thinker-VLA 做动作执行和工业操作；底层运控模型未单独披露。 | Thinker 基座模型 + Thinker-WM 世界模型；U1 使用 Resonance-LM 情感大模型。 | Thinker 最大 100B；VLA/WM 未披露。 | 端侧全功能模块 GPU 显存需求从 64GB 优化至 32GB；NVIDIA 披露优必选可由 Jetson AGX Orin 64GB 迁移到 32GB。 | 工业化端侧部署最明确，重点讲“100B 大脑下沉到 32GB 端侧模块”。 |
-| 蚂蚁灵波 Robbyant | LingBot-VLA 2.0 统一 55 维动作空间；Sparse MoE Action Expert；WRC “一脑多机”驱动乐聚/R2/钛虎。 | LingBot-World 2.0；LingBot-VA 2.0；LingBot-Vision/Depth 空间感知。 | VLA 2.0：6B；VA：约 5B DiT；Vision：1B；World 未披露。 | VLA 2.0：RTX 4090D 上 10 步 denoising 约 130ms；VA：约 18-24GB VRAM；World：720p/60fps、控制延迟 <1s。 | 官方硬数据很强，应和银河、优必选一起放进 PPT 主表。 |
-| 智元机器人 AGIBOT | 运动智能/操作智能未披露独立小脑参数；Action Expert 负责精细动作执行。 | GO-1/GO-2 具身基座模型；GE-2 世界模型；Genie Evolver 1.0 闭环真机强化学习。 | 模型参数未披露；业内二手报道称 GO-1/GO-2 属百亿参数以内。 | A3 Ultra：700 TOPS 端侧具身处理器；G2 Max 双臂标准 38kg、峰值 50kg；模型 Hz 未披露。 | WAIC 后可进 PPT 主表：端侧算力明确，但模型参数仍缺。 |
-| 智平方 AI2 Robotics | GOVLA / FiS-VLA，快慢系统深度融合，异构输入 + 异步频率。 | AlphaBrain 具身大模型，驱动 AlphaBot 2。 | 未披露。 | 未披露。 | 头部玩家，信息披露偏模型路线和商业落地，缺少参数/算力。 |
-| 星海图 Galaxea | 高性能运动小脑；全身控制基础模型；Nexo 强调力触与精密作业。 | G0.5 VLA 基础模型；Fast-WAM 世界模型；Nexo 用于前置仓长时序作业。 | 未披露。 | 会场介绍口径：Nexo 约 700 TOPS 端侧算力，接近 NVIDIA Thor/T3000 865 FP4 TFLOPS 量级；Fast-WAM 公开报道单步推理约 190ms。 | 已有较明确端侧算力口径，但模型参数仍未公开。 |
-| 自变量 X Square Robot | 未披露独立小脑；强调硬件本体原生适配基础模型控制。 | WALL-B 世界统一模型；Wall-OSS-0.5 预训练模型上真机测 17 个任务。 | 未披露。 | 未披露。 | 叙事最激进：从 VLA 三段式转向统一世界模型，但硬指标未公开。 |
-| 宇树 Unitree | 强项在本体和运动控制；G1 官方称模仿与强化学习驱动。 | WRC 演讲提到 VLA 与世界模型，并称 2025 年重启视频生成式世界模型投入；未披露量产大脑模型。 | 未披露。 | G1 基础算力：8 核高性能 CPU；开发/EDU 版本可选 Jetson Orin。 | 本体玩家代表，适合放在“硬件强、模型参数未披露”位置。 |
-| 蔚蓝智能 BabyAlpha | 四足运控未披露。 | BabyAlpha A3 本地运行交互大模型。 | 7B。 | 本地端侧运行，芯片未披露。 | 虽非人形头部，但“7B 本地大模型”是少数明确参数案例。 |
+| 部署方式 | 厂商/项目 | 大脑模型 | 模型架构 | 参数/数据 | 算力/部署 | 推理频率/延迟 |
+|---|---|---|---|---|---|---|
+| 纯端侧/本体端侧 | 蚂蚁灵波 Robbyant | LingBot-VLA 2.0；LingBot-VA 2.0；LingBot-World/Vision/Depth | VLA + Sparse MoE Action Expert；Video-Action；世界模型/视觉/深度模型 | VLA 6B；VA 约 5B DiT；Vision 1B；约 6 万小时、20+ 本体；Depth 1.5 亿数据 | VLA 在 RTX 4090D 本地推理；VA 约 18-24GB VRAM；Depth 提供 edge-side SDK | VLA 约 130ms；World 720p/60fps、控制延迟 <1s |
+| 纯端侧/本体端侧 | MiniCPM-Robot | RobotManip；RobotTrack | 操作 VLA；目标跟踪 VLA | 1.5B；0.9B；60 帧上下文推理量 125→3.3 TFLOPs/决策步 | H100/H20；RobotTrack 部署 Jetson Orin NX 16GB | H100 120ms；H20 10→37Hz；Go2 本地 5+FPS/180ms |
+| 纯端侧/本体端侧 | 地瓜机器人 / 它石智航 | S600 适配 3B 具身大模型 | 端侧具身模型适配与算力平台 | 3B；首期 5 天真机部署 | 560 TOPS INT8；32/64GB LPDDR5；204.8GB/s | 端侧稳定运行，Hz 未公开 |
+| 纯端侧/本体端侧 | 蔚蓝智能 BabyAlpha | BabyAlpha A3 本地交互大模型 | 本地 LLM / 环境识别 / 对话 | 7B | 本地端侧运行 |  |
+| 纯端侧/本体端侧 | 科大讯飞 / 灵境智源 | 讯飞机器人大脑；MScape N1100/MS-N1100 | 端侧具身智脑设备，具体模型未公开 |  | N1100 官网：1000 TOPS；14 路传感器融合 + 4 路 EtherCAT；用户会场口径：可按网络环境切换“云+端/纯端侧”，核心为 Jetson T5000、可选 T4000；T5000 官方 AI 性能 2070 FP4 TFLOPS、128GB、40-130W |  |
+| 纯端侧/弱网备用 | 中国兵器 / 杭州智元研究院 | 具身大脑通用套件 | 多模态大模型驱动的“感知-记忆-规划-执行-反思”闭环 |  | 公开稿披露具身大脑通用套件、机动抗毁边缘云；用户会场观察：端侧大脑设备弱于云侧但无网可用 |  |
+| 纯端侧/边缘部署 | 星海图 Galaxea | G0.5；Fast-WAM / GigaWorld-Policy-0.5；Nexo | 自回归 VLA；世界动作模型；长时序作业智能 | G0.5 基于 Qwen3.5 2B 初始化；18 本体；约 1 亿 VQA；预训练约 12 万步 | R1 Lite 原生支持端侧模型部署；Nexo 700 TOPS 为 WRC 会场口径，待公开链接 | Fast-WAM 约 190ms；A100 189ms、RTX 4090 110ms、C++ 85ms |
+| 端云协同 | 优必选 UBTECH | Thinker；Thinker-VLA；Thinker-WM | 基座模型；VLA；世界模型 | Thinker 最大 100B | 高实时能力端侧，云端做慢推理、多机调度和模型管理；端侧显存 64GB→32GB | VLA 推理效率 +176% |
+| 端云协同 | 智元机器人 AGIBOT | GO-1/GO-2；GE-2；Genie Evolver 1.0 | 具身基座模型；世界模型；闭环真机强化学习 |  | A3 Ultra：700 TOPS 端侧具身处理器；G2 Max 支持 7x24h 无人化码垛搬运 | 二手口径 10-20Hz；官方 Hz 未公开 |
+| 端云协同 | 北京人形 / 天工 | Pelican-Unify；Pelican-VL 2.0；Wow/天悟；PelicanVLM；XR-1 | 统一表征具身世界模型；VLM；WFM；跨本体 VLA | PelicanVLM 72B；Pelican-Unify 百万小时数据池；Wow/WU 曾披露 5000+ 小时视频数据 | Pelican-Unify 已在天轶真机部署跑通；天工 Omni 端侧原生智能架构，支持大模型边缘部署 |  |
+| 端云协同 | 机器科学 RoboScience | 具身世界模型 + 通用操作模型 | 世界模型；通用操作模型 |  | REX G1 与部署于腾讯云的模型配合 |  |
+| 端云协同 | 傅利叶 Fourier | LLM + embodied models + planning | LLM；具身模型；导航规划 |  | 框架连接 LLM、具身模型、导航规划与低级运控 |  |
+| 云侧/平台/未明 | 银河通用 Galbot | LDA-1B；AstraBrain WAM；Grasp/Grocery/TrackVLA | 隐式世界-动作模型；WAM；VLA | LDA-1B：1B | 跨本体后训练；生产部署算力未公开 |  |
+| 云侧/平台/未明 | 智平方 AI2 Robotics | AlphaBrain；GOVLA / FiS-VLA | 具身大模型；双系统 VLA；异构输入 + 异步频率 |  |  |  |
+| 云侧/平台/未明 | 自变量 X Square | WALL-B；Wall-OSS-0.5 | 世界统一模型；视觉/语言/动作统一；端到端模型 | Wall-OSS-0.5 真机测试 17 个任务 | 模型上真机，端云分工未公开 |  |
+| 云侧/平台/未明 | 普渡 Pudu | PuduFM 1.0；Pudu Agent OS | Physical Agent；具身基座模型；一脑多形 | 每年 5000 万小时实景运行数据回流 | D7 自主换电；模型端侧算力未公开 |  |
 
 ### 8.2 算力单元参考
 
-| 算力单元/平台 | 明确数据 | 对应模型层 | PPT 用法 |
+| 算力单元/平台 | 明确数据 | 对应部署方式 | PPT 用法 |
 |---|---|---|---|
-| NVIDIA Jetson/IGX T3000 | 865 FP4 TFLOPS；32GB LPDDR5X；273GB/s 带宽。 | 端侧 System 1/2：LLM、VLM、VLA、世界基础模型。 | 说明端侧大脑进入“几十 GB 显存、数百 TFLOPS”门槛。 |
-| NVIDIA Jetson T2000 | 400 FP4 TFLOPS；16GB 内存。 | 中低阶端侧感知、导航、机械臂策略。 | 说明端侧算力开始分层。 |
-| NVIDIA Cosmos 3 Edge | 40 亿参数；兼容 Thor；端侧推理用于实时感知、预测、生成动作。 | System 1/2 融合：轻量世界基础模型。 | 可作为“世界模型端侧化”的标杆参照。 |
-| 黑芝麻智能 Liora | 最高 700 TOPS，支持世界模型与端到端控制。 | 高阶人形、多机器人协同。 | 国产机器人算力平台参照。 |
-| 黑芝麻 Kalos/Aura | Kalos 48 TOPS；Aura 70 TOPS。 | System 0/1：感知、运动控制、多任务执行。 | 说明低速服务、四足/巡检等不一定需要最高端 GPU。 |
+| NVIDIA Jetson T5000 / Jetson AGX Thor | 2070 FP4 TFLOPS（稀疏）；128GB LPDDR5X；273GB/s；40-130W。 | 纯端侧/端云协同的大脑推理、VLA、VLM、世界模型。 | 说明端侧机器人“大脑”已进入 2 PFLOPS FP4、128GB 内存档位。 |
+| NVIDIA Jetson T4000 | 1200 FP4 TFLOPS（稀疏）；64GB LPDDR5X；273GB/s；40-70W。 | 中高阶本体端侧推理。 | 可解释 MS-N1100/N1100 等设备的可选配置和功耗档。 |
+| 灵境智源 MScape N1100 | 1000 TOPS；14 路传感器融合；4 路 EtherCAT；万兆网口；Xenomai 硬实时。 | 纯端侧具身智脑设备。 | 可作为“模型未披露，但端侧智脑硬件量化明确”的样本。 |
+| 地瓜机器人 RDK S600 | 560 TOPS INT8；32/64GB LPDDR5；204.8GB/s；适配 3B 具身模型。 | 国产端侧大脑/边缘算力平台。 | 说明 3B 级模型已经可在国产端侧平台完成真机适配。 |
+| 智元 A3 Ultra / 星海图 Nexo | A3 Ultra 公开口径 700 TOPS；Nexo 700 TOPS 为会场口径，待公开链接。 | 高阶人形本体端侧算力。 | 说明 700 TOPS 已成为 2026 高阶人形端侧算力锚点。 |
 
 ### 8.3 PPT 结论
 
-可用一句话收束：WRC2026 的大小脑竞争已经从“有没有具身大模型”转为“能否把大脑、VLA 和小脑压到端侧，并用真实场景数据闭环持续迭代”。当前公开硬指标最完整的是银河通用、蚂蚁灵波；端侧工程化最清晰的是优必选；智元 A3 Ultra 已在 WAIC 披露 700 TOPS 具身处理器；星海图 Nexo 也有约 700 TOPS 会场口径；但智元、星海图、智平方、自变量的大模型参数和生产部署频率仍披露不足。
+1. 端侧算力正在从 Orin 级进入 700-1000 TOPS 与 1200-2070 FP4 TFLOPS 档：智元 A3 Ultra 700 TOPS、星海图 Nexo 700 TOPS 会场口径、灵境 N1100 1000 TOPS、Jetson T5000 2070 FP4 TFLOPS，说明高阶机器人开始把 VLA/VLM/世界模型下沉到本体或近端边缘设备。
+2. 端侧模型能力已经不只做语音/识别：MiniCPM-Robot 1.5B/0.9B 能在 H20 从 10Hz 提到 37Hz、Go2 本地 5+FPS；蚂蚁灵波 6B VLA 在 RTX 4090D 约 130ms，World 2.0 标称 720p/60fps、控制延迟 <1s。端侧化趋势的核心不是完全替代云端，而是在断网、弱网、低时延和隐私场景保证基本自主。
+3. 端云协同仍是更强模型能力的主线：优必选把高实时能力放端侧、云端承担慢推理和多机调度；北京人形 Pelican-Unify 用 VLM/action model/WFM 打通理解、预演、执行，并以百万小时数据池迭代；机器科学 REX G1 直接配合腾讯云世界模型和通用操作模型。云侧优势在于更大模型、更强规划、更快迭代，端侧优势在于低延迟、可离线和数据安全。
 
 ### 8.4 官方来源补充清单
 
@@ -163,6 +178,9 @@ WRC 展示中，工业和物流场景最关心的不是一次性成功，而是�
 | 宇树 Unitree | 展位 C312；G1、B2、Go2、H2，WRC 官方披露 G1 23-43 关节、H2 超高算力平台。 | G1 官方基础算力 8 核 CPU；高算力模块可选 Orin；G1-D 官方写 Orin NX 16GB 100TOPS 等可选项。 | “本体平台”：适合作为第三方 VLA/小脑部署载体。 |
 | 傅利叶 Fourier | 展位 C229；GR-3 为 Care-bot，柔肤软包覆与全感交互系统。 | WRC 复盘报道称其框架连接 LLM、具身模型、导航规划和低级运控；参数/算力未披露。 | “通用控制栈”：把模型和本体适配层平台化。 |
 | 魔法原子 MagicLab | 展位 C323；WRC 官方披露“通用大脑+模块化全栈产品”架构和原子万象大模型。 | 参数/算力未披露；官方披露 MagicBot 42 自由度、已进驻追觅工厂实训。 | 可作为“物理 AI 原生平台”补充案例，但硬数据不足。 |
+| 北京人形 / 天工 | WRC 发布 Pelican-Unify 与天工 Omni；官方称 Pelican-Unify 集成 VLM、action model、WFM，并在天轶真机部署跑通。 | PelicanVLM 72B；Pelican-Unify 百万小时数据池；天工 Omni 端侧原生智能架构，支持大模型边缘部署。 | “统一表征世界模型 + 端侧原生本体”代表国家队路线。 |
+| 中国兵器 / 杭州智元研究院 | 中国兵器牵头央企展区；公开稿披露“具身大脑通用套件”和“机动抗毁边缘云”。 | 具身大脑通用套件基于多模态大模型构建“感知-记忆-规划-执行-反思”闭环；模型参数未公开。 | 可作为弱网/无网端侧大脑设备样本，用户会场观察为“无网可用，智能弱于云侧”。 |
+| 科大讯飞 / 灵境智源 | 灵境智源与科大讯飞 2025 年达成具身智能战略合作；灵境 N1100 为第三代人形机器人大脑。 | N1100 官方披露 1000 TOPS、14 路传感器融合、4 路 EtherCAT、Xenomai；用户会场观察为讯飞机器人大脑 MS-N1100 可按网络切换云+端/纯端侧，核心 Jetson T5000/可选 T4000。 | 端侧智脑硬件数据明确，但具体大脑模型名称未披露。 |
 
 ## 9. WAIC 2026 增量：WRC 前置验证与硬数据补充
 
