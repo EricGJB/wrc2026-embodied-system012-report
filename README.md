@@ -38,7 +38,11 @@
 | 蔚蓝智能 BabyAlpha | WRC 展出 BabyAlpha A3 四足机器狗。 | 四足运控未披露模型细节。 | 本地交互、跟随、环境识别。 | 70 亿参数本地运行大模型，支持自然语言对话、环境识别。 | 本地端侧运行，无需云端持续传输数据。 | 7B。 | 终端算力，芯片型号未披露。 | 未披露。 | 腾讯云转载: https://cloud.tencent.com/developer/article/2731996?policyId=1003 |
 | 傅利叶智能 Fourier Intelligence | WRC 展示 GR-3/“具身之家”，自然语言控制多台机器人完成居家任务。 | 框架连接低级运动控制；具体小脑模型未披露。 | 具身模型、导航与规划系统协同执行取送、安防、接待等任务。 | LLM + embodied models + planning。 | 提供连接 LLM、具身模型、导航规划和低级运控的框架，让模型开发者接入验证。 | 未披露。 | 未披露。 | 未披露。 | KrASIA/36Kr: https://kr-asia.com/at-world-robot-conference-2026-robots-face-the-test-of-real-work；上观: https://www.shobserver.cn/news/detail?id=1162762 |
 | 逐际动力 LimX Dynamics | WRC 亮点展品 LimX Luna；强调语音大模型对话、手势识别、姿态模仿、动作/视觉/语音原子化。 | 高动态本体、跑跳空翻能力，底层运控模型未披露。 | 姿态模仿、舞蹈/动作原子组合。 | 语音大模型对话、AI 自动解析客户需求生成场景模式。 | 平板端群控；可接入其他机器人与智能体。 | 未披露。 | 未披露。 | 多机同步/差异化表演动作同步误差 <50ms；模型推理频率未披露。 | WRC 亮点: https://www.worldrobotconference.com/208/ |
-| 宇树 Unitree | WRC 期间王兴兴演讲指出泛化不足是瓶颈；G1/H1/R1 等本体和格斗赛热度高。 | 公开产品强调模仿与强化学习驱动、毫秒级响应控制；无 WRC 披露的大脑模型名称。 | 未公开自研 VLA 量产模型；公司平台含 UniFolm/UniPlatform。 | 王兴兴称主流路线为 VLA 和世界模型，并称公司 2025 年重启并扩大视频生成式世界模型投入。 | G1 官方基础算力为 8 核高性能 CPU；EDU/开发版本可选高算力模组。 | 未披露。 | G1 官方基础算力：8 核高性能 CPU；部分开发版本可选 Jetson Orin，具体 WRC 本体配置未披露。 | 官方未披露；第三方 H1 论文在 Unitree H1 上部署 actor+encoder 可 50Hz 控制，不能等同于宇树量产模型。 | Unitree G1: https://www.unitree.com/g1；WRC 预热: https://www.worldrobotconference.com/news/latestnews/2997.html；演讲报道: https://news.qq.com/rain/a/20260820A08S9A00 |
+| 宇树 Unitree | WRC 期间王兴兴演讲指出泛化不足是瓶颈；G1/H1/R1 等本体和格斗赛热度高；G1-D 官方页披露模型训练与推理工具链。 | 公开产品强调模仿与强化学习驱动和毫秒级响应控制，但未披露具名小脑模型参数。 | 公司推进 VLA 路线；G1-D 支持自定义模型开发、部署与分布式训练。 | UnifoLM-WMA-0 是开源 World-Model-Action 架构；公开报道称 UnifoLM-X1-0 工业级具身大模型已在自有工厂试点部署；王兴兴称 VLA 和世界模型是主流路线。 | G1-D 支持本体端侧高算力模组和模型部署工具；工业模型试点为自有工厂场景。 | UnifoLM-WMA-0/UnifoLM-X1-0 参数未公开。 | G1-D 高算力模组可选 Orin NX 16GB（100 TOPS），基础算力为 8 核高性能 CPU。 | G1-D 官方披露系统遥操作延迟低于 100ms、采样率 60Hz；第三方 H1 论文的 50Hz 控制不能等同于宇树量产模型。 | Unitree G1-D: https://www.unitree.com/mobile/G1-D/；北京新闻: https://www.bjnews.com.cn/detail/1786102945129070.html；WRC 预热: https://www.worldrobotconference.com/news/latestnews/2997.html |
+| 云深处 Deep Robotics | WAIC/黑芝麻材料展示搭载黑芝麻芯片的云深处绝影 X30；X30 官方页强调工业级四足巡检与全地形能力。 | 未公开具名小脑模型。 | 未检索到云深处具名 VLA 或技能模型。 | 未检索到云深处具名大脑模型。 | 可作为端侧算力生态样本，但 X30 官方页未披露具体芯片型号和模型部署方式。 | 未披露。 | 黑芝麻 Aura 平台为 70 TOPS，并被公开材料列为在云深处等伙伴产品中进入商用阶段；WAIC 官方稿称 X30 搭载黑芝麻芯片。 | 未披露。 | 黑芝麻 WAIC: https://www.blacksesame.com/zh/list_8/994.html；Aura 商用: https://caifuhao.eastmoney.com/news/20251121175709043148940；X30 官方: https://www.deeprobotics.cn/robot/wap/product3.html |
+| 魔法原子 MagicLab | WAIC 发布 MagicBot X1/D1/T1 和 Magic-VLA K02；官方 MagicBot Gen1 页披露高性能计算模块。 | 官方披露 motion control network、6D visual servoing 和 full-body imitation learning，但未公开具名小脑模型参数。 | Magic-VLA K02 采用高层任务理解与低层动作执行双系统。 | Magic-Mix 是自研世界模型，包含 Magic-Mix WAM 和 Magic-Mix Creator。 | MagicBot Gen1 有端侧 AI 处理器；Magic-VLA K02/Magic-Mix 的生产部署位置未公开。 | Magic-VLA K02/Magic-Mix 参数未披露。 | MagicBot Gen1 官方规格为 8-core CPU + 100 TOPS AI Processor。 | 未披露。 | WAIC: https://autonews.gasgoo.com/articles/news/waic-2026-magiclab-launches-three-new-robot-products-embodied-intelligence-accelerates-entry-into-factories-and-public-scenarios-2079099620004175873；Gen1: https://www.magiclab.top/en/human；Magic-Mix: https://www.gasgoo.com/robot/news/70456157-%E9%AD%94%E6%B3%95%E5%8E%9F%E5%AD%90%E5%8F%91%E5%B8%83%E8%87%AA%E7%A0%94%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8Bmagic-mix/ |
+| 京东 JoyAI | WRC 官方材料披露京东“机器人+AI 生态”；京东近期发布 JoyAI 模型矩阵。 | 未公开具名小脑模型。 | JoyAI-RA 0.1 是面向机器人自治的 VLA 基础模型。 | JoyAI-RA 0.5 是 Vision-Language-World-Action 框架，包含 VLM、latent-action-conditioned world model 和 flow-matching action expert；JoyAI 矩阵覆盖语音、图像、视频、实时交互、世界模型和具身智能等 7 个基础模型方向。 | 京东云/JoyInside 提供生态与云侧能力，但机器人本体端侧部署未公开。 | JoyAI-RA 0.1/0.5 参数未披露。 | 未披露机器人本体端侧算力。 | 未披露。 | WRC 官方: https://www.worldrobotconference.com/news/3600.html；JoyAI 报道: https://finance.people.com.cn/BIG5/n1/2026/0720/c1004-40764320.html；JoyAI-RA 0.5: https://arxiv.org/abs/2608.05674；JoyAI-RA 0.1: https://arxiv.org/abs/2604.20100 |
+| 星尘智能 Astribot | WRC 官方展位页披露自研 Lumo 基座模型和 DuoCore 商业化部署框架；WAIC 期间星尘产品与 TurboX IRB10、RDK S100 等算力平台完成落地或适配。 | DuoCore-FS 的 fast pathway 负责高频动作生成，但未作为独立小脑模型披露参数。 | DuoCore-FS 是异步 Fast-Slow VLA，采用快路径高频动作生成和慢路径 VLM 推理。 | Lumo 是自研基座模型；DuoCore 是商业化部署框架，平衡复杂任务理解与实时动作控制。 | WRC 官方表述指向商业化部署框架；TurboX IRB10 与 RDK S100 资料均指向本体端侧推理或适配。 | DuoCore-FS 支持 3B 参数 VLM；Lumo 参数未公开。 | TurboX IRB10 基于 Qualcomm Dragonwing IQ10，最高 700 TOPS；星尘 T1 已适配 RDK S100，S100 BPU 为 80 TOPS。 | DuoCore-FS 达到 30Hz 全身 action-chunk generation。 | WRC 官方: https://www.worldrobotconference.com/expo/company/441.html；DuoCore-FS: https://arxiv.org/abs/2512.20188；TurboX: https://www.thundersoft.com/waic-2026/news/turbx-irb10-stardust-robot-waic/；S100: https://www.zidonghua.com.cn/news/program/293135.html |
 
 ## 4. 算力与端侧部署要点
 
@@ -127,28 +131,38 @@ WRC 展示中，工业和物流场景最关心的不是一次性成功，而是�
 - 科大讯飞 x 灵境智源合作：https://www.guandian.cn/m/show/522426
 - NVIDIA Jetson Thor/T5000/T4000 官方规格：https://www.nvidia.cn/autonomous-machines/embedded-systems/jetson-thor/
 - 机器科学 RoboScience REX G1/Visics：https://app.xinhuanet.com/news/article.html?articleId=202608203015cd806bf8432889dd72e71d8f9804；https://new.qq.com/rain/a/20260820A03U3C00
+- 宇树 UnifoLM/G1-D：https://www.unitree.com/mobile/G1-D/；https://www.bjnews.com.cn/detail/1786102945129070.html
+- 云深处/黑芝麻 Aura：https://www.blacksesame.com/zh/list_8/994.html；https://caifuhao.eastmoney.com/news/20251121175709043148940；https://www.deeprobotics.cn/robot/wap/product3.html
+- 魔法原子 MagicLab 官方/Magic-Mix：https://www.magiclab.top/en/human；https://www.gasgoo.com/robot/news/70456157-%E9%AD%94%E6%B3%95%E5%8E%9F%E5%AD%90%E5%8F%91%E5%B8%83%E8%87%AA%E7%A0%94%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8Bmagic-mix/
+- 京东 JoyAI/JoyAI-RA：https://www.worldrobotconference.com/news/3600.html；https://finance.people.com.cn/BIG5/n1/2026/0720/c1004-40764320.html；https://arxiv.org/abs/2608.05674；https://arxiv.org/abs/2604.20100
+- 星尘智能 Astribot Lumo/DuoCore/TurboX/S100：https://www.worldrobotconference.com/expo/company/441.html；https://arxiv.org/abs/2512.20188；https://www.thundersoft.com/waic-2026/news/turbx-irb10-stardust-robot-waic/；https://www.zidonghua.com.cn/news/program/293135.html
 
 ## 8. 一页 PPT 版：按部署方式分类的大脑模型表
 
 ### 8.1 机器人“大脑”与端侧/端云部署
 
-下表为一页 PPT 的代表样本，不等同于全部统计名单；部署方式占比按第 10 节的 22 家/项目扩展样本计算。
+下表为一页 PPT 的代表样本，不等同于全部统计名单；部署方式占比按第 10 节的 25 家/项目扩展样本计算。本轮检索显示：宇树、魔法原子、京东和星尘智能已有具名大脑模型或架构公开；宇树、云深处、魔法原子和星尘智能有端侧算力或推理频率量化信息；京东公开了 JoyAI-RA 机器人模型框架，但未检索到机器人本体算力或参数量。
 
 | 部署方式 | 厂商/项目 | 大脑模型、架构和参数 | 小脑模型 | 算力/部署 | 推理频率/延迟 |
 |---|---|---|---|---|---|
-| 纯端侧/本体端侧：模型或智脑设备主要在机器人本体运行，优点是离线可用、低时延和数据不出端，缺点是受功耗、显存和散热约束；扩展样本中 5/22 家，占 22.7%。 | 蚂蚁灵波 Robbyant | LingBot-VLA 2.0 是 6B VLA，采用 Sparse MoE Action Expert；LingBot-VA 2.0 是约 5B DiT 世界动作模型，LingBot-Vision 为 1B，LingBot-World 参数未公开。 |  | LingBot-VLA 2.0 在 RTX 4090D 本地推理；LingBot-VA 需要约 18-24GB VRAM；LingBot-Depth 提供 edge-side SDK。 | LingBot-VLA 2.0 单次推理约 130ms；LingBot-World 2.0 标称 720p/60fps，控制延迟低于 1s。 |
+| 纯端侧/本体端侧：模型或智脑设备主要在机器人本体运行，优点是离线可用、低时延和数据不出端，缺点是受功耗、显存和散热约束；扩展样本中 8/25 家，占 32.0%。 | 蚂蚁灵波 Robbyant | LingBot-VLA 2.0 是 6B VLA，采用 Sparse MoE Action Expert；LingBot-VA 2.0 是约 5B DiT 世界动作模型，LingBot-Vision 为 1B，LingBot-World 参数未公开。 |  | LingBot-VLA 2.0 在 RTX 4090D 本地推理；LingBot-VA 需要约 18-24GB VRAM；LingBot-Depth 提供 edge-side SDK。 | LingBot-VLA 2.0 单次推理约 130ms；LingBot-World 2.0 标称 720p/60fps，控制延迟低于 1s。 |
 |  | MiniCPM-Robot | MiniCPM-RobotManip 是 1.5B 通用操作 VLA，MiniCPM-RobotTrack 是 0.9B 目标跟踪 VLA。 |  | RobotManip 可在 H100/H20 推理，RobotTrack 可部署在 Jetson Orin NX 16GB。 | H100 BF16 单帧前向 120ms；H20 推理从 10Hz 提升至 37Hz；Go2 本地跟踪 5+FPS、约 180ms。 |
 |  | 地瓜机器人 / 它石智航 | RDK S600 已适配 3B 参数级具身大模型，模型名称未公开。 |  | RDK S600 提供 560 TOPS INT8、32/64GB LPDDR5 和 204.8GB/s 内存带宽。 |  |
 |  | 星海图 Galaxea | G0.5 是自回归 VLA，基于 Qwen3.5 2B 初始化；Fast-WAM/GigaWorld-Policy-0.5 是世界动作模型，模型总参数未公开。 | 星海图披露高性能运动小脑和全身控制基础模型，但未公开参数。 | R1 Lite 原生支持端侧模型部署；Nexo 700 TOPS 为 WRC 会场口径，待公开链接。 | Fast-WAM 单步约 190ms；GigaWorld-Policy-0.5 在 A100 为 189ms、RTX 4090 为 110ms、C++ 部署为 85ms。 |
 |  | 蔚蓝智能 BabyAlpha | BabyAlpha A3 本地运行 7B 交互大模型，用于对话和环境识别。 |  | BabyAlpha A3 本地端侧运行，芯片型号未公开。 |  |
-| 端云协同/可切换：端侧处理高实时或离线兜底，云侧处理慢推理和多机调度，优点是兼顾低延迟和更强模型，缺点是依赖网络与系统编排；扩展样本中 6/22 家，占 27.3%。 | 科大讯飞 / 灵境智源 | 讯飞机器人大脑采用 MScape N1100/MS-N1100 端侧具身智脑设备，具体大脑模型未公开。 | N1100 以 Xenomai 硬实时和 EtherCAT 接口支撑控制，但未公开独立小脑模型。 | N1100 官方披露 1000 TOPS；用户会场口径为可按网络切换云+端或纯端侧，核心为 Jetson T5000、可选 T4000，其中 T5000 官方规格为 2070 FP4 TFLOPS、128GB、40-130W。 |  |
+|  | 宇树 Unitree | UnifoLM-WMA-0 是开源 World-Model-Action 架构，UnifoLM-X1-0 是工业级具身大模型，公开报道称已在自有工厂试点部署，公司同时推进 WMA 与 VLA 路线。 | 宇树公开产品以运动控制见长，但未公开具名小脑模型参数。 | G1-D 高算力模组可选 Orin NX 16GB（100 TOPS），基础算力为 8 核高性能 CPU。 | G1-D 系统遥操作延迟低于 100ms，采样率为 60Hz。 |
+|  | 云深处 Deep Robotics | 未检索到具名大脑模型；WAIC/黑芝麻生态材料显示绝影 X30 搭载黑芝麻芯片。 | 未公开具名小脑模型。 | 黑芝麻 Aura 平台为 70 TOPS，并被公开材料列为在云深处等伙伴产品进入商用阶段；X30 官方产品页未披露芯片型号。 |  |
+|  | 星尘智能 Astribot | Lumo 是自研基座模型，DuoCore 是商业化部署框架；DuoCore-FS 是快慢异步全身 VLA，支持 3B VLM。 | DuoCore-FS 的 fast pathway 负责高频动作生成，但未作为独立小脑模型披露参数。 | TurboX IRB10 在星尘产品上首个落地，最高 700 TOPS；星尘 T1 已适配 RDK S100，其 BPU 为 80 TOPS。 | DuoCore-FS 达到 30Hz whole-body action-chunk generation。 |
+| 端云协同/可切换：端侧处理高实时或离线兜底，云侧处理慢推理和多机调度，优点是兼顾低延迟和更强模型，缺点是依赖网络与系统编排；扩展样本中 6/25 家，占 24.0%。 | 科大讯飞 / 灵境智源 | 讯飞机器人大脑采用 MScape N1100/MS-N1100 端侧具身智脑设备，具体大脑模型未公开。 | N1100 以 Xenomai 硬实时和 EtherCAT 接口支撑控制，但未公开独立小脑模型。 | N1100 官方披露 1000 TOPS；用户会场口径为可按网络切换云+端或纯端侧，核心为 Jetson T5000、可选 T4000，其中 T5000 官方规格为 2070 FP4 TFLOPS、128GB、40-130W。 |  |
 |  | 中国兵器 / 杭州智元研究院 | 具身大脑通用套件基于多模态大模型构建“感知-记忆-规划-执行-反思”自主决策闭环，模型参数未公开。 |  | 公开稿披露具身大脑通用套件和机动抗毁边缘云；用户会场观察为端侧大脑设备无网可用，但智能弱于云侧大脑。 |  |
 |  | 优必选 UBTECH | Thinker 是最大 100B 的具身基座模型，Thinker-VLA 负责动作执行，Thinker-WM 是世界模型。 |  | 优必选将高实时能力放在端侧，云端承担慢推理、多机调度和模型管理；VLA 端侧显存需求从 64GB 优化至 32GB。 | VLA 推理效率提升 176%。 |
 |  | 智元机器人 AGIBOT | GO-1/GO-2 是具身基座模型，GE-2 是世界模型，Genie Evolver 1.0 是闭环真机强化学习系统，参数未公开。 | Action Expert 负责精细动作执行，参数未公开。 | A3 Ultra 公开披露 700 TOPS 端侧具身处理器。 | 二手口径称 GO-1/GO-2 可在边缘端 10Hz-20Hz 推理，官方 Hz 未公开。 |
 |  | 北京人形 / 天工 | Pelican-Unify 是统一表征具身世界模型，集成 VLM、action model 和 WFM；PelicanVLM 是 72B 视觉语言大模型，XR-1 是跨本体 VLA。 | 北京人形披露全身控制自主导航系统，但未公开参数。 | Pelican-Unify 已在天轶真机部署跑通；天工 Omni 采用端侧原生智能架构并支持大模型边缘部署。 |  |
-| 云侧/平台/未明：公开资料未说明生产部署方式，或大脑更像平台/研究模型，优点是模型尺度和训练迭代空间更大，缺点是离线能力与实时性不确定；扩展样本中 11/22 家，占 50.0%。 | 银河通用 Galbot | LDA-1B 是 1B 隐式世界-动作基础模型，AstraBrain WAM 是世界动作模型，GraspVLA/GroceryVLA/TrackVLA 是技能 VLA。 | AstraBrain-WBC 0.5 是 8040 万参数全身实时运控小脑。 | AstraBrain-WBC 0.5 公开测试使用单张 RTX 4090，并支持 Jetson Orin onboard deployment；LDA-1B 生产部署算力未公开。 | AstraBrain-WBC 0.5 在 RTX 4090 上推理低于 1.5ms，可满足 50Hz 闭环。 |
+| 云侧/平台/未明：公开资料未说明生产部署方式，或大脑更像平台/研究模型，优点是模型尺度和训练迭代空间更大，缺点是离线能力与实时性不确定；扩展样本中 11/25 家，占 44.0%。 | 银河通用 Galbot | LDA-1B 是 1B 隐式世界-动作基础模型，AstraBrain WAM 是世界动作模型，GraspVLA/GroceryVLA/TrackVLA 是技能 VLA。 | AstraBrain-WBC 0.5 是 8040 万参数全身实时运控小脑。 | AstraBrain-WBC 0.5 公开测试使用单张 RTX 4090，并支持 Jetson Orin onboard deployment；LDA-1B 生产部署算力未公开。 | AstraBrain-WBC 0.5 在 RTX 4090 上推理低于 1.5ms，可满足 50Hz 闭环。 |
 |  | 智平方 AI2 Robotics | AlphaBrain 是具身大模型，GOVLA/FiS-VLA 是采用异构输入和异步频率的双系统 VLA，参数未公开。 |  |  |  |
 |  | 自变量 X Square | WALL-B 是世界统一模型，Wall-OSS-0.5 是端到端预训练模型，参数未公开。 |  | 模型已上真机，端云分工未公开。 |  |
+|  | 魔法原子 MagicLab | Magic-VLA K02 是通用具身大模型，采用高层任务理解与低层动作执行双系统；Magic-Mix 是世界模型，含 WAM 和 Creator。 | MagicBot Gen1 官方披露 motion control network、6D visual servoing 和 full-body imitation learning，但未公开具名小脑模型参数。 | MagicBot Gen1 官方规格为 8-core CPU + 100 TOPS AI Processor；Magic-VLA K02/Magic-Mix 生产部署算力未公开。 |  |
+|  | 京东 JoyAI | JoyAI-RA 0.1 是 VLA 机器人自治基础模型，JoyAI-RA 0.5 是 VLWA 框架，包含 VLM、latent-action-conditioned world model 和 flow-matching action expert；JoyAI 矩阵含 7 个基础模型。 |  | 京东云/JoyInside 提供机器人生态与云侧能力，但未公开机器人本体端侧算力。 |  |
 
 ### 8.2 算力单元参考
 
@@ -162,9 +176,9 @@ WRC 展示中，工业和物流场景最关心的不是一次性成功，而是�
 
 ### 8.3 PPT 结论
 
-1. 扩展样本显示，明确走纯端侧/本体端侧的仍是少数，5/22 家、占 22.7%；端云协同或可切换为 6/22 家、占 27.3%；仍未公开生产部署方式的为 11/22 家、占 50.0%。这说明“端侧化”已成为发布重点，但多数机器人厂商还没有把大脑模型的真实部署边界讲清。
-2. NVIDIA 等算力平台正在把端侧大脑从 Orin 级推向 Thor 级：Jetson T4000 为 1200 FP4 TFLOPS，Jetson T5000/AGX Thor 为 2070 FP4 TFLOPS、128GB、40-130W；整机和边缘设备侧已有智元 A3 Ultra 700 TOPS、星海图 Nexo 700 TOPS 会场口径、灵境 N1100 1000 TOPS、地瓜 S600 560 TOPS，端侧 VLA/VLM/世界模型的硬件门槛正在形成。
-3. 端侧模型能力已经具备基础操作和低时延推理能力：MiniCPM-Robot 1.5B/0.9B 可在 H20 从 10Hz 提升到 37Hz，蚂蚁灵波 6B VLA 在 RTX 4090D 约 130ms，星海图 GigaWorld-Policy-0.5 在 RTX 4090 为 110ms、C++ 部署为 85ms。端云协同仍适合 72B/100B 级大脑，端侧负责安全、离线和快反应，云侧负责更大参数、慢推理和多机调度。
+1. 扩展样本显示，明确走纯端侧/本体端侧的为 8/25 家、占 32.0%；端云协同或可切换为 6/25 家、占 24.0%；仍未公开生产部署方式的为 11/25 家、占 44.0%。这说明“端侧化”已成为发布重点，但多数机器人厂商还没有把大脑模型的真实部署边界讲清。
+2. NVIDIA 等算力平台正在把端侧大脑从 Orin 级推向 Thor 级：Jetson T4000 为 1200 FP4 TFLOPS，Jetson T5000/AGX Thor 为 2070 FP4 TFLOPS、128GB、40-130W；整机和边缘设备侧已有云深处/Aura 70 TOPS、星尘 T1/RDK S100 80 TOPS、宇树 G1-D Orin NX 100 TOPS、魔法原子 MagicBot Gen1 100 TOPS、地瓜 S600 560 TOPS、智元 A3 Ultra 700 TOPS、星海图 Nexo 700 TOPS 会场口径、星尘/TurboX IRB10 700 TOPS、灵境 N1100 1000 TOPS，端侧 VLA/VLM/世界模型的硬件门槛正在形成。
+3. 端侧模型能力已经具备基础操作和低时延推理能力：MiniCPM-Robot 1.5B/0.9B 可在 H20 从 10Hz 提升到 37Hz，蚂蚁灵波 6B VLA 在 RTX 4090D 约 130ms，星海图 GigaWorld-Policy-0.5 在 RTX 4090 为 110ms、C++ 部署为 85ms，星尘 DuoCore-FS 支持 3B VLM 并达到 30Hz 全身 action-chunk generation，宇树 G1-D 系统遥操作延迟低于 100ms 且采样率 60Hz。端云协同仍适合 72B/100B 级大脑，端侧负责安全、离线和快反应，云侧负责更大参数、慢推理和多机调度。
 
 ### 8.4 官方来源补充清单
 
@@ -175,13 +189,16 @@ WRC 展示中，工业和物流场景最关心的不是一次性成功，而是�
 | 优必选 UBTECH | 展位 C103；Walker S2 支持 3 分钟热插拔换电、7×24 小时运行；Walker C1 搭载大模型驱动多模态内核。 | Thinker 最大 100B；VLA 端侧显存从 64GB 优化到 32GB；推理效率提升 176%。 | “端侧工程化”：大模型能力压到机器人本体。 |
 | 星海图 Galaxea | 展位 C210；Kengo 以高性能运动小脑与具身大脑为核心，R1 Lite 原生支持端侧模型部署。 | Fast-WAM 公开报道单步约 190ms；G0.5 复现计划开放权重/接口/评测/微调工具；Nexo 会场口径约 700 TOPS。 | “端侧算力+世界模型延迟”：Nexo 700TOPS、Fast-WAM 190ms。 |
 | 自变量 X Square | 展位 C107；量子 1 Pro/量子 2 号搭载端到端具身智能基座大模型，量子 2 号最多 62 自由度。 | Wall-OSS-0.5 上真机测试 17 个任务；WALL-B 世界统一模型；参数/算力未公开。 | “统一模型路线”：视觉、语言、动作从分段走向统一。 |
-| 宇树 Unitree | 展位 C312；G1、B2、Go2、H2，WRC 官方披露 G1 23-43 关节、H2 超高算力平台。 | G1 官方基础算力 8 核 CPU；高算力模块可选 Orin；G1-D 官方写 Orin NX 16GB 100TOPS 等可选项。 | “本体平台”：适合作为第三方 VLA/小脑部署载体。 |
+| 宇树 Unitree | 展位 C312；G1、B2、Go2、H2，WRC 官方披露 G1 23-43 关节、H2 超高算力平台。 | UnifoLM-WMA-0 为开源 World-Model-Action 架构；公开报道称 UnifoLM-X1-0 工业级具身大模型已在自有工厂试点部署；G1-D 官方写 Orin NX 16GB 100 TOPS 高算力模组、8 核高性能 CPU、遥操作延迟低于 100ms、采样率 60Hz。 | “本体端侧平台+WMA/VLA 路线”：可补入一页 PPT 主表，但自研大脑参数量未公开。 |
 | 傅利叶 Fourier | 展位 C229；GR-3 为 Care-bot，柔肤软包覆与全感交互系统。 | WRC 复盘报道称其框架连接 LLM、具身模型、导航规划和低级运控；参数/算力未披露。 | “通用控制栈”：把模型和本体适配层平台化。 |
-| 魔法原子 MagicLab | 展位 C323；WRC 官方披露“通用大脑+模块化全栈产品”架构和原子万象大模型。 | 参数/算力未披露；官方披露 MagicBot 42 自由度、已进驻追觅工厂实训。 | 可作为“物理 AI 原生平台”补充案例，但硬数据不足。 |
+| 云深处 Deep Robotics | WRC/WAIC 公开材料显示绝影 X30 进入黑芝麻智能 SesameX 机器人生态展示。 | 未检索到云深处具名大脑模型；黑芝麻 Aura 平台为 70 TOPS，公开材料称 Aura 正在云深处等伙伴产品中进入商用阶段；云深处 X30 官方页未披露芯片型号。 | “端侧算力有生态口径、模型未公开”：适合放入 PPT 但需标注来源边界。 |
+| 魔法原子 MagicLab | 展位 C323；WRC 官方披露“通用大脑+模块化全栈产品”架构和原子万象大模型。 | Magic-VLA K02 为通用具身大模型，采用高层任务理解与低层动作执行双系统；Magic-Mix 世界模型包含 Magic-Mix WAM 和 Magic-Mix Creator；MagicBot Gen1 官方规格为 8-core CPU + 100 TOPS AI Processor。 | “模型名+端侧算力有公开信息，但模型参数未披露”：可补入 PPT 平台/未明类别。 |
 | 北京人形 / 天工 | WRC 发布 Pelican-Unify 与天工 Omni；官方称 Pelican-Unify 集成 VLM、action model、WFM，并在天轶真机部署跑通。 | PelicanVLM 72B；Pelican-Unify 百万小时数据池；天工 Omni 端侧原生智能架构，支持大模型边缘部署。 | “统一表征世界模型 + 端侧原生本体”代表国家队路线。 |
 | 中国兵器 / 杭州智元研究院 | 中国兵器牵头央企展区；公开稿披露“具身大脑通用套件”和“机动抗毁边缘云”。 | 具身大脑通用套件基于多模态大模型构建“感知-记忆-规划-执行-反思”闭环；模型参数未公开。 | 可作为弱网/无网端侧大脑设备样本，用户会场观察为“无网可用，智能弱于云侧”。 |
 | 科大讯飞 / 灵境智源 | 灵境智源与科大讯飞 2025 年达成具身智能战略合作；灵境 N1100 为第三代人形机器人大脑。 | N1100 官方披露 1000 TOPS、14 路传感器融合、4 路 EtherCAT、Xenomai；用户会场观察为讯飞机器人大脑 MS-N1100 可按网络切换云+端/纯端侧，核心 Jetson T5000/可选 T4000。 | 端侧智脑硬件数据明确，但具体大脑模型名称未披露。 |
 | 机器科学 RoboScience | WRC 展示 REX G1 和 Visics 通用具身大模型；公开报道称展台通过 API 调用部署于腾讯云的具身世界模型与通用操作模型。 | Visics 采用 VLOA 架构，内部由具身世界模型和通用操作模型双引擎驱动；另有报道称 REX G1 端侧搭载 2070 TFLOPS 算力。 | 可作为“端侧算力 + 云侧世界模型/操作模型”的端云协同样本。 |
+| 京东 JoyAI | WRC 官方材料披露京东“机器人+AI 生态”，JoyInside 构建 AI Home 生态；京东近期发布 JoyAI 模型矩阵。 | JoyAI-RA 0.1 为 VLA 机器人自治基础模型；JoyAI-RA 0.5 为 VLWA 框架，包含 VLM、latent-action-conditioned world model 与 flow-matching action expert；公开材料未披露参数量和机器人本体算力。 | “模型框架明确、算力未明”：适合放入平台/未明类别。 |
+| 星尘智能 Astribot | WRC 官方展位页披露星尘智能自研 Lumo 基座模型和 DuoCore 商业化部署框架，采用快慢双系统平衡复杂任务理解和实时动作控制。 | DuoCore-FS 为异步 Fast-Slow VLA，支持 3B 参数 VLM，并达到 30Hz 全身 action-chunk generation；TurboX IRB10 基于 Qualcomm Dragonwing IQ10，最高 700 TOPS，已在星尘产品上首个产品级落地；星尘 T1 已适配 RDK S100，S100 BPU 为 80 TOPS。 | “模型参数+频率+算力都有量化”：适合补入 PPT 纯端侧/本体端侧代表。 |
 
 ## 9. WAIC 2026 增量：WRC 前置验证与硬数据补充
 
@@ -197,7 +214,7 @@ WAIC 2026 于 2026 年 7 月 17-20 日在上海举行，时间上早于 WRC 2026
 | 面壁智能 / OpenBMB MiniCPM-Robot | WAIC 期间发布并开源 MiniCPM-Robot 系列，虽非整机厂，但给出非常完整的端侧具身模型数据。 | MiniCPM-RobotManip 通用操作 VLA；MiniCPM-RobotTrack 目标跟踪 VLA。 | Manip：1.5B；Track：0.9B。Manip 支持 1 分钟视觉上下文，60 帧历史流式推理从 125 TFLOPs/决策步降至 3.3 TFLOPs。 | H100 BF16 单帧前向 120ms；PhyAI 将 H20 推理从 10Hz 提至 37Hz；RobotTrack 在 Unitree Go2 EDU 本地视觉跟踪 5+ FPS、约 180ms，部署硬件为 Jetson Orin NX 16GB。 | 可补到“开源模型/第三方大脑”页：小模型端侧化比单纯参数堆叠更适合机器人。 | https://github.com/OpenBMB/MiniCPM-Robot |
 | 黑芝麻智能 SesameX | WAIC 官方稿披露 SesameX 从车规芯片扩展到机器人，展出 Kalos、Aura 开发套件及搭载黑芝麻芯片的云深处绝影 X30。 | SesameX 全脑智能计算平台；Kalos/Aura/Liora 三档计算模组。 | 非模型参数；Kalos/Aura/Liora 覆盖 48TOPS 至近 600TOPS。 | WAIC 口径：48TOPS 至近 600TOPS；2025 发布页披露 Kalos 48TOPS、Aura 70TOPS、Liora 近 600TOPS；WRC 后续口径升至 Liora 700TOPS。 | 报告中黑芝麻应区分 WAIC 近 600TOPS 与 WRC 700TOPS 两个时间口径。 | https://www.blacksesame.com/zh/list_8/994.html；https://www.blacksesame.com/zh/list_8/914.html |
 | 星海图 Galaxea | WAIC 未检索到比 WRC/开发者大会更多的 Nexo 算力公开网页；但 WAIC 前后官方/论文链条补强 G0.5 与 WAM 延迟数据。 | G0.5 自回归 VLA；Fast-WAM / GigaWorld-Policy-0.5 世界动作模型；全身控制基础模型。 | G0.5 基于 Qwen3.5 2B 初始化，18 种本体，约 1 亿条 VQA，预训练约 12 万步；模型总参数未披露。 | Fast-WAM 公开口径 190ms；GigaWorld-Policy-0.5 论文披露 A100 189ms、RTX 4090 110ms、C++ 部署 85ms。 | 可把星海图从“只有 Nexo 700TOPS 会场口径”补充为“模型延迟有论文硬指标，但 Nexo 700TOPS 仍待公开链接”。 | https://opengalaxea.github.io/G05/；https://arxiv.org/html/2607.13960v1；https://www.geekpark.net/news/365536 |
-| 魔法原子 MagicLab | WAIC 发布 MagicBot X1/D1/T1 和 Magic-VLA K02，现场展示叠盒封胶、柔性衣物整理、行李箱收纳。 | Magic-VLA K02；此前上交会材料提到 Magic-Mix 世界模型。 | 参数未披露。 | 叠盒封胶组合式长程任务成功率超过 90%；X1 31 主动自由度、单关节峰值扭矩 450N·m；D1 已进驻追觅工厂常态验证。 | 适合补“长程任务成功率”案例，但因无参数/算力，不建议放一页 PPT 主表。 | https://autonews.gasgoo.com/articles/news/waic-2026-magiclab-launches-three-new-robot-products-embodied-intelligence-accelerates-entry-into-factories-and-public-scenarios-2079099620004175873；https://finance.sina.com.cn/tech/roll/2026-07-19/doc-iniihqpn1240008.shtml |
+| 魔法原子 MagicLab | WAIC 发布 MagicBot X1/D1/T1 和 Magic-VLA K02，现场展示叠盒封胶、柔性衣物整理、行李箱收纳。 | Magic-VLA K02；Magic-Mix 世界模型包含 Magic-Mix WAM 和 Magic-Mix Creator。 | 参数未披露。 | MagicBot Gen1 官方规格为 8-core CPU + 100 TOPS AI Processor；Magic-VLA K02/Magic-Mix 的生产部署算力未公开。 | 可补入一页 PPT，但应归入“云侧/平台/未明”：有模型名和本体算力，缺模型参数和真实部署方式。 | https://autonews.gasgoo.com/articles/news/waic-2026-magiclab-launches-three-new-robot-products-embodied-intelligence-accelerates-entry-into-factories-and-public-scenarios-2079099620004175873；https://www.magiclab.top/en/human；https://www.gasgoo.com/robot/news/70456157-%E9%AD%94%E6%B3%95%E5%8E%9F%E5%AD%90%E5%8F%91%E5%B8%83%E8%87%AA%E7%A0%94%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8Bmagic-mix/ |
 | 普渡机器人 Pudu | WAIC 首次线下展示 PUDU D7，并阐释“一脑多形”Physical Agent 全栈技术架构。 | PuduFM 1.0 具身智能基座模型；Pudu Agent OS。 | 模型参数未披露；累计出货超 13 万台、覆盖 85 个国家、5 万余家客户，每年超 5000 万小时实景运行数据回流。 | D7 最高负载 14kg、作业高度 2m、自主换电；公开 WAIC 材料未披露模型端侧算力。 | 可补“商用服务机器人数据飞轮”，但缺参数/算力，PPT 主表优先级低于蚂蚁/银河/智元/地瓜/MiniCPM。 | https://finance.sina.com.cn/roll/2026-07-17/doc-iniicqkw1429495.shtml；https://www.prnewswire.com/news-releases/pudu-embodied-unveils-the-next-generation-pudu-d7-opening-a-new-chapter-for-industrial-semi-humanoid-robotics-302786976.html |
 | 千觉机器人 X-Touch | WAIC 展示 VTLA 触觉具身模型、XTac UMI G1 视触觉数据采集夹爪、触觉传感器矩阵。 | VTLA（视觉-触觉-语言-动作）模型；X-TouchMind V1；TacVerse 数据集。 | 参数未披露。 | 触觉传感器毫秒级响应；XTac UMI G1 同步采集视觉、触觉、位姿轨迹、夹爪状态等五维数据。 | 可补 System 0/1 的触觉闭环方向，但因参数算力不足，仅作趋势项。 | https://www3.xinhuanet.com/tech/20260720/6cbb5f1efd99431ab721ffce590e72f1/c.html；https://www.stcn.com/article/detail/4027332.html |
 
@@ -211,10 +228,10 @@ WAIC 2026 于 2026 年 7 月 17-20 日在上海举行，时间上早于 WRC 2026
 
 ## 10. 扩展部署方式统计样本名单
 
-统计口径：覆盖本报告在 WRC 2026、WAIC 2026 及厂商近期公开材料中纳入的机器人整机厂、具身大脑供应商和机器人模型项目；不把 NVIDIA、黑芝麻智能、摩尔线程这类纯算力平台供应商计入占比，但在 PPT 和报告中作为算力演进参照。若厂商公开资料未说明生产部署方式，则归入“云侧/平台/未明”。
+统计口径：覆盖本报告在 WRC 2026、WAIC 2026 及厂商近期公开材料中纳入的机器人整机厂、具身大脑供应商和机器人模型项目；不把 NVIDIA、黑芝麻智能、摩尔线程、TurboX/创通联达这类纯算力或模组平台供应商计入占比，但在 PPT 和报告中作为算力演进参照。若厂商公开资料未说明生产部署方式，则归入“云侧/平台/未明”。
 
 | 部署方式 | 数量 | 占比 | 参与统计的厂商/项目 |
 |---|---:|---:|---|
-| 纯端侧/本体端侧 | 5 | 22.7% | 蚂蚁灵波 Robbyant；MiniCPM-Robot / OpenBMB；地瓜机器人 / 它石智航；星海图 Galaxea；蔚蓝智能 BabyAlpha |
-| 端云协同/可切换 | 6 | 27.3% | 优必选 UBTECH；智元机器人 AGIBOT；北京人形 / 天工；科大讯飞 / 灵境智源；中国兵器 / 杭州智元研究院；机器科学 RoboScience |
-| 云侧/平台/未明 | 11 | 50.0% | 银河通用 Galbot；智平方 AI2 Robotics；自变量 X Square；影身智能 Shadow AI；章鱼动力 Octopus；傅利叶 Fourier Intelligence；逐际动力 LimX Dynamics；宇树 Unitree；魔法原子 MagicLab；普渡机器人 Pudu；千觉机器人 X-Touch |
+| 纯端侧/本体端侧 | 8 | 32.0% | 蚂蚁灵波 Robbyant；MiniCPM-Robot / OpenBMB；地瓜机器人 / 它石智航；星海图 Galaxea；蔚蓝智能 BabyAlpha；宇树 Unitree；云深处 Deep Robotics；星尘智能 Astribot |
+| 端云协同/可切换 | 6 | 24.0% | 优必选 UBTECH；智元机器人 AGIBOT；北京人形 / 天工；科大讯飞 / 灵境智源；中国兵器 / 杭州智元研究院；机器科学 RoboScience |
+| 云侧/平台/未明 | 11 | 44.0% | 银河通用 Galbot；智平方 AI2 Robotics；自变量 X Square；影身智能 Shadow AI；章鱼动力 Octopus；傅利叶 Fourier Intelligence；逐际动力 LimX Dynamics；魔法原子 MagicLab；普渡机器人 Pudu；千觉机器人 X-Touch；京东 JoyAI |
