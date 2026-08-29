@@ -133,17 +133,17 @@ WRC 展示中，工业和物流场景最关心的不是一次性成功，而是�
 
 | 部署方式 | 厂商/项目 | 大脑模型、架构和参数 | 小脑模型 | 算力/部署 | 推理频率/延迟 |
 |---|---|---|---|---|---|
-| 纯端侧/本体端侧 | 科大讯飞 / 灵境智源 | 讯飞机器人大脑采用 MScape N1100/MS-N1100 端侧具身智脑设备，具体大脑模型未公开。 | N1100 以 Xenomai 硬实时和 EtherCAT 接口支撑控制，但未公开独立小脑模型。 | N1100 官方披露 1000 TOPS；用户会场口径为可按网络切换云+端或纯端侧，核心为 Jetson T5000、可选 T4000，其中 T5000 官方规格为 2070 FP4 TFLOPS、128GB、40-130W。 |  |
+| 纯端侧/本体端侧：模型或智脑设备主要在机器人本体运行，优点是离线可用、低时延和数据不出端，缺点是受功耗、显存和散热约束；当前 7/13 家，占 53.8%。 | 科大讯飞 / 灵境智源 | 讯飞机器人大脑采用 MScape N1100/MS-N1100 端侧具身智脑设备，具体大脑模型未公开。 | N1100 以 Xenomai 硬实时和 EtherCAT 接口支撑控制，但未公开独立小脑模型。 | N1100 官方披露 1000 TOPS；用户会场口径为可按网络切换云+端或纯端侧，核心为 Jetson T5000、可选 T4000，其中 T5000 官方规格为 2070 FP4 TFLOPS、128GB、40-130W。 |  |
 |  | 中国兵器 / 杭州智元研究院 | 具身大脑通用套件基于多模态大模型构建“感知-记忆-规划-执行-反思”自主决策闭环，模型参数未公开。 |  | 公开稿披露具身大脑通用套件和机动抗毁边缘云；用户会场观察为端侧大脑设备无网可用，但智能弱于云侧大脑。 |  |
 |  | 蚂蚁灵波 Robbyant | LingBot-VLA 2.0 是 6B VLA，采用 Sparse MoE Action Expert；LingBot-VA 2.0 是约 5B DiT 世界动作模型，LingBot-Vision 为 1B，LingBot-World 参数未公开。 |  | LingBot-VLA 2.0 在 RTX 4090D 本地推理；LingBot-VA 需要约 18-24GB VRAM；LingBot-Depth 提供 edge-side SDK。 | LingBot-VLA 2.0 单次推理约 130ms；LingBot-World 2.0 标称 720p/60fps，控制延迟低于 1s。 |
 |  | MiniCPM-Robot | MiniCPM-RobotManip 是 1.5B 通用操作 VLA，MiniCPM-RobotTrack 是 0.9B 目标跟踪 VLA。 |  | RobotManip 可在 H100/H20 推理，RobotTrack 可部署在 Jetson Orin NX 16GB。 | H100 BF16 单帧前向 120ms；H20 推理从 10Hz 提升至 37Hz；Go2 本地跟踪 5+FPS、约 180ms。 |
 |  | 地瓜机器人 / 它石智航 | RDK S600 已适配 3B 参数级具身大模型，模型名称未公开。 |  | RDK S600 提供 560 TOPS INT8、32/64GB LPDDR5 和 204.8GB/s 内存带宽。 |  |
 |  | 星海图 Galaxea | G0.5 是自回归 VLA，基于 Qwen3.5 2B 初始化；Fast-WAM/GigaWorld-Policy-0.5 是世界动作模型，模型总参数未公开。 | 星海图披露高性能运动小脑和全身控制基础模型，但未公开参数。 | R1 Lite 原生支持端侧模型部署；Nexo 700 TOPS 为 WRC 会场口径，待公开链接。 | Fast-WAM 单步约 190ms；GigaWorld-Policy-0.5 在 A100 为 189ms、RTX 4090 为 110ms、C++ 部署为 85ms。 |
 |  | 蔚蓝智能 BabyAlpha | BabyAlpha A3 本地运行 7B 交互大模型，用于对话和环境识别。 |  | BabyAlpha A3 本地端侧运行，芯片型号未公开。 |  |
-| 端云协同 | 优必选 UBTECH | Thinker 是最大 100B 的具身基座模型，Thinker-VLA 负责动作执行，Thinker-WM 是世界模型。 |  | 优必选将高实时能力放在端侧，云端承担慢推理、多机调度和模型管理；VLA 端侧显存需求从 64GB 优化至 32GB。 | VLA 推理效率提升 176%。 |
+| 端云协同：端侧处理高实时能力，云侧处理慢推理和多机调度，优点是兼顾低延迟和更强模型，缺点是依赖网络与系统编排；当前 3/13 家，占 23.1%。 | 优必选 UBTECH | Thinker 是最大 100B 的具身基座模型，Thinker-VLA 负责动作执行，Thinker-WM 是世界模型。 |  | 优必选将高实时能力放在端侧，云端承担慢推理、多机调度和模型管理；VLA 端侧显存需求从 64GB 优化至 32GB。 | VLA 推理效率提升 176%。 |
 |  | 智元机器人 AGIBOT | GO-1/GO-2 是具身基座模型，GE-2 是世界模型，Genie Evolver 1.0 是闭环真机强化学习系统，参数未公开。 | Action Expert 负责精细动作执行，参数未公开。 | A3 Ultra 公开披露 700 TOPS 端侧具身处理器。 | 二手口径称 GO-1/GO-2 可在边缘端 10Hz-20Hz 推理，官方 Hz 未公开。 |
 |  | 北京人形 / 天工 | Pelican-Unify 是统一表征具身世界模型，集成 VLM、action model 和 WFM；PelicanVLM 是 72B 视觉语言大模型，XR-1 是跨本体 VLA。 | 北京人形披露全身控制自主导航系统，但未公开参数。 | Pelican-Unify 已在天轶真机部署跑通；天工 Omni 采用端侧原生智能架构并支持大模型边缘部署。 |  |
-| 云侧/平台/未明 | 银河通用 Galbot | LDA-1B 是 1B 隐式世界-动作基础模型，AstraBrain WAM 是世界动作模型，GraspVLA/GroceryVLA/TrackVLA 是技能 VLA。 | AstraBrain-WBC 0.5 是 8040 万参数全身实时运控小脑。 | AstraBrain-WBC 0.5 公开测试使用单张 RTX 4090，并支持 Jetson Orin onboard deployment；LDA-1B 生产部署算力未公开。 | AstraBrain-WBC 0.5 在 RTX 4090 上推理低于 1.5ms，可满足 50Hz 闭环。 |
+| 云侧/平台/未明：公开资料未说明生产部署方式，或大脑更像平台/研究模型，优点是模型尺度和训练迭代空间更大，缺点是离线能力与实时性不确定；当前 3/13 家，占 23.1%。 | 银河通用 Galbot | LDA-1B 是 1B 隐式世界-动作基础模型，AstraBrain WAM 是世界动作模型，GraspVLA/GroceryVLA/TrackVLA 是技能 VLA。 | AstraBrain-WBC 0.5 是 8040 万参数全身实时运控小脑。 | AstraBrain-WBC 0.5 公开测试使用单张 RTX 4090，并支持 Jetson Orin onboard deployment；LDA-1B 生产部署算力未公开。 | AstraBrain-WBC 0.5 在 RTX 4090 上推理低于 1.5ms，可满足 50Hz 闭环。 |
 |  | 智平方 AI2 Robotics | AlphaBrain 是具身大模型，GOVLA/FiS-VLA 是采用异构输入和异步频率的双系统 VLA，参数未公开。 |  |  |  |
 |  | 自变量 X Square | WALL-B 是世界统一模型，Wall-OSS-0.5 是端到端预训练模型，参数未公开。 |  | 模型已上真机，端云分工未公开。 |  |
 
